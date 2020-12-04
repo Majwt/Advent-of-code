@@ -5,7 +5,6 @@
 #include <filesystem>
 #include <sstream>
 
-
 struct passport
 {
     std::string byr;
@@ -55,11 +54,6 @@ string_code hashit(std::string const &inString)
 
 void addpassport(std::string full)
 {
-    
-    
-
-    
-    
 }
 
 int main()
@@ -70,63 +64,66 @@ int main()
     {
         return 1;
     }
-    
+
     std::string l;
     std::string line2;
 
     while (std::getline(input, l))
     {
         // std::cout << l << "\n";
-        line2.append(l +"\n");
+        line2.append(l + "\n");
     }
     std::string s;
     std::istringstream is(line2);
     int pos = 4;
 
-    
     passport structure;
-    while (std::getline(is, s)) {
+    while (std::getline(is, s))
+    {
         if (s.empty())
         {
-            std::cout << "\n" << "pushed"; 
+            std::cout << "\n"
+                      << "pushed";
             data.push_back(structure);
-
-        } else {
-            std::cout << "\n" << s;
-        switch (hashit(s))
-        {
-        case byr:
-            structure.byr = s.substr(pos);
-            break;
-        case iyr:
-            
-            structure.iyr = s.substr(pos);
-            break;
-        case eyr:
-            
-            structure.eyr = s.substr(pos);
-            break;
-        case hgt:
-            
-            structure.hgt = s.substr(pos);
-            break;
-        case hcl:
-            
-            structure.hcl = s.substr(pos);
-            break;
-        case ecl:
-            
-            structure.ecl = s.substr(pos);
-            break;
-        case pid:
-            
-            structure.pid = s.substr(pos);
-            break;
-        case cid:
-            
-            structure.cid = s.substr(pos);
-            break;
         }
-        }   
+        else
+        {
+            std::cout << "\n"
+                      << s;
+            switch (hashit(s))
+            {
+            case byr:
+                structure.byr = s.substr(pos);
+                break;
+            case iyr:
+
+                structure.iyr = s.substr(pos);
+                break;
+            case eyr:
+
+                structure.eyr = s.substr(pos);
+                break;
+            case hgt:
+
+                structure.hgt = s.substr(pos);
+                break;
+            case hcl:
+
+                structure.hcl = s.substr(pos);
+                break;
+            case ecl:
+
+                structure.ecl = s.substr(pos);
+                break;
+            case pid:
+
+                structure.pid = s.substr(pos);
+                break;
+            case cid:
+
+                structure.cid = s.substr(pos);
+                break;
+            }
+        }
     }
 }
