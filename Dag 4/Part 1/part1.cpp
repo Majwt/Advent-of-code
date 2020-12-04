@@ -84,29 +84,39 @@ string_code hashit(std::string const &inString)
 
 void checkpassport(passport &data)
 {
-    if (data.byr.empty() == false &&
-        data.ecl.empty() == false &&
-        data.eyr.empty() == false &&
-        data.hcl.empty() == false &&
-        data.hgt.empty() == false &&
-        data.iyr.empty() == false &&
-        data.pid.empty() == false)
-        ;
-    {
-        int birth = std::stoi(data.byr, nullptr, 10);
-        int expire = std::stoi(data.eyr, nullptr, 10);
-        int issue = std::stoi(data.iyr, nullptr, 10);
-        //if (birth < issue && birth < expire && expire > issue)
-        //{
-        valid++;
-        //}
-    }
+    if (data.byr.empty())
+            {
+            }
+            else if (data.iyr.empty())
+            {
+            }
+            else if (data.eyr.empty())
+            {
+                
+            }
+            else if (data.hgt.empty())
+            {
+            }
+            else if (data.hcl.empty())
+            {
+            }
+            else if (data.ecl.empty())
+            {
+            }
+            else if (data.pid.empty())
+            {
+            } else {
+                valid++;
+            }
 }
+        // int birth = std::stoi(data.byr, nullptr, 10);
+        // int expire = std::stoi(data.eyr, nullptr, 10);
+        // int issue = std::stoi(data.iyr, nullptr, 10);
 
 int main()
 {
 
-    std::ifstream input{"d:\\Kod\\Advent of Code\\Dag 4\\input.txt"};
+    std::ifstream input{"d:\\Kod\\Advent of Code\\Dag 4\\example.txt"};
     if (!input.is_open())
     {
         return 1;
@@ -135,6 +145,62 @@ int main()
         {
             std::cout << "\n"<< s;
             std::string str = s.substr(0, 3);
+            if (str == "byr") {
+                if (!s.substr(pos).empty())
+                {
+                structure.byr = s.substr(pos);
+                }
+            } else if (str == "iyr") {
+                if (!s.substr(pos).empty())
+                {
+                structure.iyr = s.substr(pos);
+                } else
+                {
+                    structure.iyr = "";
+                }
+            } else if (str == "eyr") {
+                if (!s.substr(pos).empty()) 
+                {
+                structure.eyr = s.substr(pos);
+                } else
+                {
+                    structure.eyr = "";
+                }
+            } else if (str == "hgt") {
+                if (!s.substr(pos).empty()) 
+                {
+                structure.hgt = s.substr(pos);
+                } else
+                {
+                    structure.hgt = "";
+                }
+            } else if (str == "hcl") {
+                if (!s.substr(pos).empty()) 
+                {
+                structure.hcl = s.substr(pos);
+                } else
+                {
+                    structure.hcl = "";
+                }
+            } else if (str == "ecl") {
+                if (!s.substr(pos).empty()) 
+                {
+                structure.ecl = s.substr(pos);
+                } else
+                {
+                    structure.ecl = "";
+                }
+            } else if (str == "pid") {
+                if (!s.substr(pos).empty()) 
+                {
+                structure.pid = s.substr(pos);
+                } else
+                {
+                    structure.pid = "";
+                }
+                
+            }
+            /*
             switch (hashit(str))
             {
             case byr:
@@ -172,7 +238,8 @@ int main()
             default:
                 break;
             }
-        }
+        */}
+        
     }
     for (size_t b = 0; b < data.size(); b++)
     {
