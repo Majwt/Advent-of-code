@@ -16,10 +16,30 @@ struct passport
     std::string pid;
     std::string cid;
 };
-
+int valid = 0;
 std::vector<std::string> clines;
 std::vector<passport> data;
-
+std::vector<passport> invalid;
+int findSmallestElement(int arr[], int n)
+{
+    /* We are assigning the first array element to
+    * the temp variable and then we are comparing
+    * all the array elements with the temp inside
+    * loop and if the element is smaller than temp
+    * then the temp value is replaced by that. This
+    * way we always have the smallest value in temp.
+    * Finally we are returning temp.
+    */
+    int temp = arr[0];
+    for (int i = 0; i < n; i++)
+    {
+        if (temp > arr[i])
+        {
+            temp = arr[i];
+        }
+    }
+    return temp;
+}
 enum string_code
 {
     byr,
@@ -30,6 +50,16 @@ enum string_code
     ecl,
     pid,
     cid
+};
+int checkC[]{
+    0, // 0 byr, 1 iyr, 2 eyr, 3 hgt, 4 hcl, 5 ecl, 6 pid, 7 cid
+    0, // iyr
+    0, // eyr
+    0, // hgt
+    0, // hcl
+    0, // ecl
+    0  // pid
+       // cid
 };
 
 string_code hashit(std::string const &inString)
@@ -52,8 +82,25 @@ string_code hashit(std::string const &inString)
         return cid;
 }
 
-void addpassport(std::string full)
+void checkpassport(passport &data)
 {
+    if (data.byr.empty() == false &&
+        data.ecl.empty() == false &&
+        data.eyr.empty() == false &&
+        data.hcl.empty() == false &&
+        data.hgt.empty() == false &&
+        data.iyr.empty() == false &&
+        data.pid.empty() == false)
+        ;
+    {
+        int birth = std::stoi(data.byr, nullptr, 10);
+        int expire = std::stoi(data.eyr, nullptr, 10);
+        int issue = std::stoi(data.iyr, nullptr, 10);
+        //if (birth < issue && birth < expire && expire > issue)
+        //{
+        valid++;
+        //}
+    }
 }
 
 int main()
@@ -81,49 +128,66 @@ int main()
     while (std::getline(is, s))
     {
         if (s.empty())
-        {
-            std::cout << "\n"
-                      << "pushed";
+        {   
             data.push_back(structure);
         }
         else
         {
-            std::cout << "\n"
-                      << s;
-            switch (hashit(s))
+            std::cout << "\n"<< s;
+            std::string str = s.substr(0, 3);
+            switch (hashit(str))
             {
             case byr:
+                checkC[0]++;
                 structure.byr = s.substr(pos);
                 break;
             case iyr:
-
+                checkC[1]++;
                 structure.iyr = s.substr(pos);
                 break;
             case eyr:
-
+                checkC[2]++;
                 structure.eyr = s.substr(pos);
                 break;
             case hgt:
-
+                checkC[3]++;
                 structure.hgt = s.substr(pos);
                 break;
             case hcl:
-
+                checkC[4]++;
                 structure.hcl = s.substr(pos);
                 break;
             case ecl:
-
+                checkC[5]++;
                 structure.ecl = s.substr(pos);
                 break;
             case pid:
-
+                checkC[6]++;
                 structure.pid = s.substr(pos);
                 break;
             case cid:
-
+                // checkC[7]++;
                 structure.cid = s.substr(pos);
+                break;
+            default:
                 break;
             }
         }
     }
+    for (size_t b = 0; b < data.size(); b++)
+    {
+        checkpassport(data[b]);
+        std::cout << "\n"
+                  << "\n";
+        std::cout << data[b].byr << " byr data \n";
+        std::cout << data[b].iyr << " iyr data \n";
+        std::cout << data[b].eyr << " eyr data \n";
+        std::cout << data[b].hgt << " hgt data \n";
+        std::cout << data[b].hcl << " hcl data \n";
+        std::cout << data[b].ecl << " ecl data \n";
+        std::cout << data[b].pid << " pid data \n";
+        std::cout << data[b].cid << " cid data \n";
+    }
+    std::cout << "\n"
+              << valid << " valid passports";
 }
