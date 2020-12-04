@@ -29,3 +29,10 @@ pid,166559648
 iyr,2011
 ecl,brn
 hgt,59in
+
+hcl,#GGGGGG
+eyr,2095
+pid,96654576
+iyr,2090
+ecl,GEE
+hgt,10000

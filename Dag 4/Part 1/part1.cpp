@@ -4,6 +4,7 @@
 #include <fstream>
 #include <filesystem>
 #include <sstream>
+#include <regex>
 
 struct passport
 {
@@ -19,27 +20,8 @@ struct passport
 int valid = 0;
 std::vector<std::string> clines;
 std::vector<passport> data;
-std::vector<passport> invalid;
-int findSmallestElement(int arr[], int n)
-{
-    /* We are assigning the first array element to
-    * the temp variable and then we are comparing
-    * all the array elements with the temp inside
-    * loop and if the element is smaller than temp
-    * then the temp value is replaced by that. This
-    * way we always have the smallest value in temp.
-    * Finally we are returning temp.
-    */
-    int temp = arr[0];
-    for (int i = 0; i < n; i++)
-    {
-        if (temp > arr[i])
-        {
-            temp = arr[i];
-        }
-    }
-    return temp;
-}
+
+
 enum string_code
 {
     byr,
@@ -51,16 +33,7 @@ enum string_code
     pid,
     cid
 };
-int checkC[]{
-    0, // 0 byr, 1 iyr, 2 eyr, 3 hgt, 4 hcl, 5 ecl, 6 pid, 7 cid
-    0, // iyr
-    0, // eyr
-    0, // hgt
-    0, // hcl
-    0, // ecl
-    0  // pid
-       // cid
-};
+
 
 string_code hashit(std::string const &inString)
 {
@@ -82,41 +55,48 @@ string_code hashit(std::string const &inString)
         return cid;
 }
 
-void checkpassport(passport &data)
+void checkpassport(passport &data2)
 {
-    if (data.byr.empty())
-            {
-            }
-            else if (data.iyr.empty())
-            {
-            }
-            else if (data.eyr.empty())
-            {
-                
-            }
-            else if (data.hgt.empty())
-            {
-            }
-            else if (data.hcl.empty())
-            {
-            }
-            else if (data.ecl.empty())
-            {
-            }
-            else if (data.pid.empty())
-            {
-            } else {
-                valid++;
-            }
-}
-        // int birth = std::stoi(data.byr, nullptr, 10);
-        // int expire = std::stoi(data.eyr, nullptr, 10);
-        // int issue = std::stoi(data.iyr, nullptr, 10);
+    bool dateValid;
+    bool hightValid;
+    bool hairColourValid;
+    bool idValid;
+    if (!data2.byr.empty() &&
+        !data2.iyr.empty() &&
+        !data2.eyr.empty() &&
+        !data2.hgt.empty() &&
+        !data2.hcl.empty() &&
+        !data2.ecl.empty() &&
+        !data2.pid.empty() /*&&
+        !data.cid.empty()*/)
+    {
+    int bir = std::stoi(data2.byr, nullptr, 10);
+    int exp = std::stoi(data2.eyr, nullptr, 10);
+    int isu = std::stoi(data2.iyr, nullptr, 10);
+        if ((bir >= 1920 && bir <=2002) && (isu >= 2010 && isu <= 2020) && (exp >= 2020 && exp <= 2030)) 
+        {dateValid = true;} else {dateValid = false;}
 
+        std::string s (data2.hcl);
+        std::smatch m;
+        std::regex e ("(#)([a-f0-9])+\n");
+        
+        if(std::regex_match(data2.hcl, std::regex("(#)([a-f0-9])+\n") )) {hairColourValid = true; valid += 200;} else {hairColourValid = false;}
+        
+    }
+    if (hairColourValid && dateValid) {
+std::cout <<"\n\n" <<"true" << "\n\n";
+valid++;
+    data.push_back(data2);
+    }
+}
+
+
+ std::vector<std::string> line;
 int main()
 {
 
-    std::ifstream input{"d:\\Kod\\Advent of Code\\Dag 4\\example.txt"};
+    // std::ifstream input{"d:\\Kod\\Advent of Code\\Dag 4\\example.txt"};
+    std::ifstream input{"d:\\Kod\\Advent of Code\\Dag 4\\input.txt"};
     if (!input.is_open())
     {
         return 1;
@@ -127,8 +107,9 @@ int main()
 
     while (std::getline(input, l))
     {
-        // std::cout << l << "\n";
+         std::cout << l << "\n";
         line2.append(l + "\n");
+
     }
     std::string s;
     std::istringstream is(line2);
@@ -137,98 +118,56 @@ int main()
     passport structure;
     while (std::getline(is, s))
     {
+       
+        line.push_back(s);
+        //std::cout << s << "\n";
+        std::string str = s.substr(0,3);
         if (s.empty())
-        {   
-            data.push_back(structure);
+        {
+            checkpassport(structure);
+            
+            structure.byr = "";
+            structure.iyr = "";
+            structure.eyr = "";
+            structure.hgt = "";
+            structure.hcl = "";
+            structure.ecl = "";
+            structure.pid = "";
+            structure.cid = "";
+
         }
         else
         {
-            std::cout << "\n"<< s;
-            std::string str = s.substr(0, 3);
-            if (str == "byr") {
-                if (!s.substr(pos).empty())
-                {
-                structure.byr = s.substr(pos);
-                }
-            } else if (str == "iyr") {
-                if (!s.substr(pos).empty())
-                {
-                structure.iyr = s.substr(pos);
-                } else
-                {
-                    structure.iyr = "";
-                }
-            } else if (str == "eyr") {
-                if (!s.substr(pos).empty()) 
-                {
-                structure.eyr = s.substr(pos);
-                } else
-                {
-                    structure.eyr = "";
-                }
-            } else if (str == "hgt") {
-                if (!s.substr(pos).empty()) 
-                {
-                structure.hgt = s.substr(pos);
-                } else
-                {
-                    structure.hgt = "";
-                }
-            } else if (str == "hcl") {
-                if (!s.substr(pos).empty()) 
-                {
-                structure.hcl = s.substr(pos);
-                } else
-                {
-                    structure.hcl = "";
-                }
-            } else if (str == "ecl") {
-                if (!s.substr(pos).empty()) 
-                {
-                structure.ecl = s.substr(pos);
-                } else
-                {
-                    structure.ecl = "";
-                }
-            } else if (str == "pid") {
-                if (!s.substr(pos).empty()) 
-                {
-                structure.pid = s.substr(pos);
-                } else
-                {
-                    structure.pid = "";
-                }
-                
-            }
-            /*
+            
+            
             switch (hashit(str))
             {
             case byr:
-                checkC[0]++;
+                // checkC[0]++;
                 structure.byr = s.substr(pos);
                 break;
             case iyr:
-                checkC[1]++;
+                // checkC[1]++;
                 structure.iyr = s.substr(pos);
                 break;
             case eyr:
-                checkC[2]++;
+                // checkC[2]++;
                 structure.eyr = s.substr(pos);
                 break;
             case hgt:
-                checkC[3]++;
+                // checkC[3]++;
                 structure.hgt = s.substr(pos);
                 break;
             case hcl:
-                checkC[4]++;
+                // checkC[4]++;
                 structure.hcl = s.substr(pos);
                 break;
             case ecl:
-                checkC[5]++;
+                // checkC[5]++;
                 structure.ecl = s.substr(pos);
                 break;
             case pid:
-                checkC[6]++;
+                // checkC[6]++;
                 structure.pid = s.substr(pos);
                 break;
             case cid:
@@ -238,23 +177,23 @@ int main()
             default:
                 break;
             }
-        */}
-        
+        }
     }
     for (size_t b = 0; b < data.size(); b++)
     {
-        checkpassport(data[b]);
-        std::cout << "\n"
-                  << "\n";
-        std::cout << data[b].byr << " byr data \n";
-        std::cout << data[b].iyr << " iyr data \n";
-        std::cout << data[b].eyr << " eyr data \n";
-        std::cout << data[b].hgt << " hgt data \n";
-        std::cout << data[b].hcl << " hcl data \n";
-        std::cout << data[b].ecl << " ecl data \n";
-        std::cout << data[b].pid << " pid data \n";
-        std::cout << data[b].cid << " cid data \n";
+        
+        std::cout << "\n" << data.size() << "\n";
+        std::cout << "byr,"<< data[b].byr <<"\n";
+        std::cout << "iyr,"<< data[b].iyr <<"\n";
+        std::cout << "eyr,"<< data[b].eyr <<"\n";
+        std::cout << "hgt,"<< data[b].hgt <<"\n";
+        std::cout << "hcl,"<< data[b].hcl <<"\n";
+        std::cout << "ecl,"<< data[b].ecl <<"\n";
+        std::cout << "pid,"<< data[b].pid <<"\n";
+        std::cout << "cid,"<< data[b].cid <<"\n";
     }
     std::cout << "\n"
               << valid << " valid passports";
+std::cout << "\n"
+              << data.size() << " valid passports";
 }
