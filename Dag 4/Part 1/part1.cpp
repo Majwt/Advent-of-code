@@ -57,10 +57,12 @@ string_code hashit(std::string const &inString)
 
 void checkpassport(passport &data2)
 {
+    /*
     bool dateValid;
     bool hightValid;
     bool hairColourValid;
     bool idValid;
+    */
     if (!data2.byr.empty() &&
         !data2.iyr.empty() &&
         !data2.eyr.empty() &&
@@ -70,6 +72,7 @@ void checkpassport(passport &data2)
         !data2.pid.empty() /*&&
         !data.cid.empty()*/)
     {
+        /*
     int bir = std::stoi(data2.byr, nullptr, 10);
     int exp = std::stoi(data2.eyr, nullptr, 10);
     int isu = std::stoi(data2.iyr, nullptr, 10);
@@ -81,13 +84,15 @@ void checkpassport(passport &data2)
         std::regex e ("(#)([a-f0-9])+\n");
         
         if(std::regex_match(data2.hcl, std::regex("(#)([a-f0-9])+\n") )) {hairColourValid = true; valid += 200;} else {hairColourValid = false;}
-        
+    */
+      valid++;  
     }
+    /*
     if (hairColourValid && dateValid) {
 std::cout <<"\n\n" <<"true" << "\n\n";
-valid++;
+valid++;*/
     data.push_back(data2);
-    }
+    
 }
 
 
