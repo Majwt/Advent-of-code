@@ -10,30 +10,27 @@ std::string line;
 std::vector<std::string> list;
 std::string Path = "..//input.txt";
 // std::string Path = "..//example.txt"; // andra fil vägen
-char alphabet[26] {'a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'};
 
-int group(std::string searchline,char ch) {
-        if(searchline.find_first_of(ch) != std::string::npos) {
-            return 1;
-        } else
-        {
-            return 0;
-        }
-        
-}
-int myFunction() {
+char alphabet[26]{'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'};
+
+void myFunction()
+{
     int groupTotal = 0;
+
     for (size_t n = 0; n < list.size(); n++)
     {
+        int inGroup = std::count(list[n].begin(), list[n].end(), ',');
+        std::cout << list[n] << " ";
+        std::cout << groupTotal << "\n";
         for (size_t p = 0; p < 27; p++)
         {
-        groupTotal += group(list[n],alphabet[p]);
-            
+            if (std::count(list[n].begin(), list[n].end(), alphabet[p]) == inGroup)
+            {
+                groupTotal += 1;
+            }
         }
-        
     }
-    return groupTotal;
-    
+    std::cout << "\n total :" << groupTotal << "\n";
 }
 int main()
 {
@@ -48,22 +45,17 @@ int main()
 
     while (getline(input, l))
     {
-        std::cout << line << "\n";
+        //std::cout << line << "\n";
         if (l.empty())
         {
             list.push_back(line);
             line = "";
-        } else {
+        }
+        else
+        {
             line += l;
+            line += ',';
         }
     }
-
-    total += myFunction();
-
-    for (size_t i = 0; i < list.size() + 1; i++)
-    {
-        std::cout << list[i] << "\n";
-    }
-    std::cout <<"\n" << total << " total\n";
-    
+    myFunction();
 }
