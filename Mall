@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+#include <string>
+#include <fstream>
+#include <filesystem>
+#include <algorithm>
+
+std::string line;
+std::string Path = "input.txt";
+// std::string Path = "example.txt"; // andra fil vägen
+int main()
+{
+
+    std::ifstream input;
+    input.open(Path);
+    if (!input.is_open())
+    {
+        return 1;
+    }
+
+    while (getline(input, line))
+    {
+        std::cout << line << '\n';
+    }
+}
