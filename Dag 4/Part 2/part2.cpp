@@ -51,8 +51,8 @@ string_code hashit(std::string const &inString)
         return ecl;
     if (inString == "pid")
         return pid;
-    if (inString == "cid")
-        return cid;
+    // if (inString == "cid")
+    //     return cid;
 }
 int count = 0;
 void checkpassport(passport &data2)
@@ -80,13 +80,13 @@ void checkpassport(passport &data2)
         if ((bir >= 1920 && bir <=2002) && (isu >= 2010 && isu <= 2020) && (exp >= 2020 && exp <= 2030)) 
         {dateValid = true;} else {dateValid = false;}
 
-        std::string sh (data2.hcl); std::smatch mh; std::regex eh ("#[a-f\\d]{6}$");
+        std::string sh (data2.hcl); std::smatch mh; std::regex eh ("\\A(#[a-f\\d]{6})\\Z");
         while(std::regex_search(sh,mh,eh)) { hairColourValid = mh.ready(); break; }
 
         std::string se (data2.ecl); std::smatch me; std::regex ee ("(amb|blu|brn|gry|grn|hzl|oth)$");
         while(std::regex_search(se,me,ee)) { eyeColourValid = me.ready(); break; }
         
-        std::string si (data2.pid); std::smatch mi; std::regex ei ("\\d{9}");
+        std::string si (data2.pid); std::smatch mi; std::regex ei ("\\A(\\d{9})\\Z");
         while(std::regex_search(si,mi,ei)) { idValid = mi.ready(); break; }
        
        std::string st (data2.hgt); std::smatch mt; std::regex et ("((1[5-8]\\d|19[0-3])cm)|((59|6\\d|7[0-6])in)$");
@@ -132,7 +132,7 @@ int main()
 
     // std::ifstream input{"d:\\Kod\\Advent of Code\\Dag 4\\example.txt"};
     // std::ifstream input{"d:\\Kod\\Advent of Code\\Dag 4\\example2.txt"};
-     std::ifstream input{"d:\\Kod\\Advent of Code\\Dag 4\\input.txt"};
+     std::ifstream input{"..\\input.txt"};
     if (!input.is_open())
     {
         return 1;
