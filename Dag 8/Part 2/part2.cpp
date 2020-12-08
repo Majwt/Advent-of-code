@@ -6,8 +6,8 @@
 #include <algorithm>
 
 std::string l;
-std::string Path = "..//input.txt";
-// std::string Path = "..//example.txt"; // andra fil vägen
+//std::string Path = "..//input.txt";
+std::string Path = "..//example.txt"; // andra fil vägen
 int main()
 {
 

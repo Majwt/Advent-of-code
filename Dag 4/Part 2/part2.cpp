@@ -74,7 +74,7 @@ void checkpassport(passport &data2)
         !data.cid.empty()*/)
     {
         
-    int bir = std::stoi(data2.byr, nullptr, 10);
+    int bir = std::stoi (data2.byr, nullptr, 10);
     int exp = std::stoi(data2.eyr, nullptr, 10);
     int isu = std::stoi(data2.iyr, nullptr, 10);
         if ((bir >= 1920 && bir <=2002) && (isu >= 2010 && isu <= 2020) && (exp >= 2020 && exp <= 2030)) 
