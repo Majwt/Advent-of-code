@@ -6,9 +6,45 @@
 #include <algorithm>
 
 std::string l;
-std::string Path = "..//input.txt";
-std::vector<int> arr;
-// std::string Path = "..//example.txt"; // andra fil vägen
+std::vector<long long> arr;
+//std::string Path = "..//input.txt";
+std::string Path = "..//example.txt"; // andra fil vägen
+
+int preamable = 5;
+bool myFunction(size_t i) {
+    bool yes;
+    
+    std::cout << i << '\n';
+    
+    
+        for (size_t n = i-1; n > i-(preamable+1); n--)
+        {
+        
+        for (size_t v = i-(preamable+1); v < i-1; v++)
+        {
+        
+        if (arr[i] == arr[n]+arr[v] && arr[n] != arr[v]) {
+            yes = true;            
+            break;
+        }
+            std::cout << "no v\n";
+        }
+            std::cout << "no n \n";
+
+        }
+    
+    
+    if (yes) {
+            return true;
+        }
+        else 
+        {
+
+        return false;
+        }
+    
+}
+
 int main()
 {
 
@@ -22,9 +58,19 @@ int main()
 
     while (getline(input, l))
     {
-        int number = std::stoi(l,nullptr,10);
-        std::cout << 1ll*number << '\n';
-        arr.push_back(1ll*number);
-
+        long long number = std::stoll(l,nullptr,10);
+        std::cout << number << '\n';
+         arr.push_back(number);
     }
+
+    for (size_t i = preamable+1; i < arr.size(); i++)
+    {
+       if(myFunction(i) == false) {
+           std::cout << "\nindex: " << i << '\n';
+           break;
+       } else {
+           continue;
+       }
+    }
+    
 }
