@@ -8,58 +8,83 @@ using namespace std;
 std::string l;
 vector<int> inputData;
 vector<int> diffArr;
+vector<int> endArr;
 int diff1;
+int diff2;
 int diff3;
 //std::string Path = "..//input.txt";
- std::string Path = "..//example.txt"; // andra fil vägen
+//std::string Path = "..//example.txt"; // andra fil vägen
+std::string Path = "..//lillaExample.txt"; // tredje fil vägen
 
-
-bool mySort (int i,int j) { return (i<j); }
-
-
-/*
-int arr[] = {1, 5, 8, 9, 6, 7, 3, 4, 2, 0}; 
-    int n = sizeof(arr)/sizeof(arr[0]); 
-  
-    sort(arr, arr+n, greater<int>()); 
-  
-    cout << "Array after sorting : \n"; 
-    for (int i = 0; i < n; ++i) 
-        cout << arr[i] << " "; 
-  
-*/
-
-void myFunction()
+bool mySort(int i, int j) { return (i < j); }
+int counter;
+void myFunction(int index)
 {
+    int ind2;
     
-   
+int last;
     for (size_t i = 0; i < inputData.size(); i++)
     {
-        // if (i+1 <inputData.size()) {
-            diffArr.push_back(inputData[i+1]%inputData[i]);
-            if(inputData[i+1]%inputData[i] == 1 || i == 0) {
-
-                diff1 += 1;
-
-            } else if( inputData[i+1]%inputData[i] == 3) {
-                diff3 += 1;
-            }
-
-        // }
+        
+            
+        
+        
+        // if (inputData[i + 1] % inputData[i] == 1 &&
+        //      inputData[i + 2] % inputData[i + 1] == 1 &&
+        //      inputData[i] % inputData[i-1] == 1 && i < index ) {
+        //      cout << "2st 1 - 2" << endl;
+            
+        //      endArr.push_back(inputData[i+1]);
+        //      i+=1;
+        //      diff2 += 1;
+             
+        //  }
+        if (inputData[i + 1] % inputData[i] == 1 &&
+             inputData[i + 2] % inputData[i + 1] == 1 && 
+             inputData[i + 3] % inputData[i+2] == 1 &&
+             inputData[i] % inputData[i-1] == 1 && i < index) {
+             cout << "3st 1 - 3" << endl;
+      
+             endArr.push_back(inputData[i+2]);
+             i+=2;
+             diff3 += 1;
+            continue;  
+         }
+         if (inputData[i + 1] % inputData[i] == 3)
+        {
+            
+            cout << "hoppade 3" << endl;
+            endArr.push_back(inputData[i]);
+            diff3 += 1;
+            
+        }
+         if (inputData[i + 1] % inputData[i] == 1)
+        {
+            cout << "hoppade 1" << endl;
+            
+            endArr.push_back(inputData[i]);
+            diff1 += 1;
+            
+        }
+        else {
+            
+            cout << "else" << endl;
+            endArr.push_back(inputData[i]);
+        }
+        
+        
     }
-    cout << endl;
-    
-        cout<< diff1 << endl;
-        cout<< diff3 << endl;
-    cout << endl;
-    for (auto &&i : diffArr)
+     endArr.push_back(22);
+    //diff1++;
+    counter++;
+    cout  << endl;
+    for (auto &&i : endArr)
     {
-        cout << i << endl;
+        cout << i<< ' ';
     }
+    cout << '\t' << inputData.size() << '\t';
+    endArr.clear();
     
-    
-    
-
 }
 int main()
 {
@@ -74,19 +99,27 @@ int main()
 
     while (getline(input, l))
     {
-        int line = stoi(l,nullptr,10);
+        int line = stoi(l, nullptr, 10);
         inputData.push_back(line);
-        std::cout << line << '\n';
-
+         //std::cout << line << ' ';
     }
-    cout << endl;
-    sort(inputData.begin(),inputData.end(),mySort);
-    for (auto &&i : inputData)
+    // cout << endl << "  ";
+    sort(inputData.begin(), inputData.end(), mySort);
+    for (auto &&n : inputData)
     {
-        cout<< i << endl;
+        
+       std::cout << n << ' ';
     }
-    inputData.push_back(inputData[inputData.size()-1]+3);
-    myFunction();
+    
+    //for (auto &&i : inputData)
+    //{
+            
+        
+        myFunction(3);
+       // cout<< i << '\t';
+        cout<<counter<<endl;
+        
+    //}
     
     
 }
