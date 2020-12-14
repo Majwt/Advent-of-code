@@ -8,8 +8,8 @@
 using namespace std;
 
 std::string l;
-//std::string Path = "..//input.txt";
-std::string Path = "..//example.txt"; // andra fil vägen
+std::string Path = "..//input.txt";
+//std::string Path = "..//example.txt"; // andra fil vägen
 
 vector<char> dirl;
 vector<int> vall;
@@ -18,9 +18,8 @@ struct Way
     int x;
     int y;
     int dir;
-    
 };
-struct boat 
+struct boat
 {
     int x;
     int y;
@@ -36,7 +35,7 @@ char Right = 'R';
 char Left = 'L';
 
 int dir = 90;
-int absUpDown,absRightLeft;
+int absUpDown, absRightLeft;
 
 void myFunction()
 {
@@ -49,22 +48,21 @@ void myFunction()
     Waypoint.dir = 90;
     for (size_t i = 0; i < vall.size(); i++)
     {
-            std::cout << endl;
-            std::cout << dirl[i] <<'\t' << vall[i] << endl;        
-                std::cout << Waypoint.x << ','<< Waypoint.y << endl;
-            std::cout << ship.x << ',' << ship.y << endl;
+        std::cout << endl;
+        std::cout << dirl[i] << '\t' << vall[i] << endl;
+        std::cout << Waypoint.x << ',' << Waypoint.y << endl;
+        std::cout << ship.x << ',' << ship.y << endl;
         if (dirl[i] == Fr)
         {
             ship.x += (Waypoint.x) * vall[i];
             ship.y += (Waypoint.y) * vall[i];
-    
 
             continue;
         }
         else if (dirl[i] == Nr)
         {
             Waypoint.y += vall[i];
-    
+
             continue;
         }
         else if (dirl[i] == So)
@@ -82,68 +80,68 @@ void myFunction()
         else if (dirl[i] == Ea)
         {
             Waypoint.x += vall[i];
-       
+
             continue;
         }
-        else if (dirl[i] == Left) 
+        else if (dirl[i] == Left)
         {
             int lastx = Waypoint.x;
             int lasty = Waypoint.y;
-           
-            if (vall[i] == 90) {
+
+            if (vall[i] == 90)
+            {
                 Waypoint.x = -lasty;
                 Waypoint.y = lastx;
-              
-            continue;
+
+                continue;
             }
-            if (vall[i] == 180) {
+            if (vall[i] == 180)
+            {
                 Waypoint.x = -lastx;
                 Waypoint.y = -lasty;
-            
-            continue;
+
+                continue;
             }
-            if (vall[i] == 270) {
+            if (vall[i] == 270)
+            {
                 Waypoint.x = lasty;
                 Waypoint.y = -lastx;
-               
-            continue;
+
+                continue;
             }
-         
-            
-        
         }
-        else if (dirl[i] == Right) 
+        else if (dirl[i] == Right)
         {
-            
+
             int lastx = Waypoint.x;
             int lasty = Waypoint.y;
-        
-          if (vall[i] == 90) {
+
+            if (vall[i] == 90)
+            {
                 Waypoint.x = lasty;
                 Waypoint.y = -lastx;
-               
-            continue;
+
+                continue;
             }
-            if (vall[i] == 180) {
+            if (vall[i] == 180)
+            {
                 Waypoint.x = -lastx;
                 Waypoint.y = -lasty;
-            
-            continue;
+
+                continue;
             }
-            if (vall[i] == 270) {
+            if (vall[i] == 270)
+            {
                 Waypoint.x = -lastx;
                 Waypoint.y = lasty;
-              
-            continue;
+
+                continue;
             }
-            
         }
-        
     }
 
     absUpDown = abs(ship.x);
     absRightLeft = abs(ship.y);
-
 }
 
 int main()
@@ -164,7 +162,7 @@ int main()
         vall.push_back(value);
         dirl.push_back(l.at(0));
     }
-    
-    myFunction();  
-    std::cout << absUpDown << " + "<< absRightLeft << " = " << absUpDown+absRightLeft << endl;
+
+    myFunction();
+    std::cout << absUpDown << " + " << absRightLeft << " = " << absUpDown + absRightLeft << endl;
 }
