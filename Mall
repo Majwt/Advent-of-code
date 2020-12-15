@@ -4,6 +4,7 @@
 #include <fstream>
 #include <filesystem>
 #include <algorithm>
+using namespace std;
 
 std::string l;
 std::string Path = "..//input.txt";

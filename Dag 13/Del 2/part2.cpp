@@ -12,6 +12,7 @@ std::vector<int> lines;
 std::vector<int> integers;
 std::vector<string> all;
 // std::string Path = "..//example.txt"; // andra fil vägen
+#if 0
 int arr[] = {
     0,
     17,
@@ -80,7 +81,7 @@ void myFunction()
     }
     cout << "nothing" << endl;
 }
-
+#endif
 size_t loop(size_t t, size_t p, size_t m, size_t k)
 {
     while ((t + p) % m != 0)
@@ -106,46 +107,6 @@ void annat()
     cout << t << endl;
 }
 
-/*
-
-
-t % 7 == 0
-t % 13 == 11
-
-
-
-
-
-
-
-
-
-152683
-82214
-18115
-34477
-56252
-
-17,
-5,
-12,
-3,
-11,
-1,
-40
-
-
-
-(i% lines[0] == 0) &&
-((i+17)%lines[1] == 0) && 
-((i+23)%lines[2] == 0) &&
-((i+35)%lines[3] == 0) &&
-((i+36)%lines[4] == 0) &&
-((i+40)%lines[5] == 0) &&
-((i+52)%lines[6] == 0) &&
-((i+54)%lines[7] == 0) &&
-((i+95)%lines[8] == 0)
-*/
 int main()
 {
 
