@@ -6,218 +6,133 @@
 #include <algorithm>
 #include <regex>
 #include <sstream>
+#include <cstring>
 
 using namespace std;
 
-string Path = "..//input.txt";
-// std::string Path = "..//example.txt"; // andra fil vägen
+string Path = "..//input2.txt";
+//  std::string Path = "..//example.txt"; // andra fil vägen
 
-struct pass
-{
-    int birthYear;
-    int issueYear;
-    int expireYear;
+int valid(char *field, char *value) {
 
-    string hight;
-    string eyeColour;
-    string hairColour;
-    string passId;
-    bool hightcheck = false;
-    bool eyecheck = false;
-    bool haircheck = false;
-    bool passIdcheck = false;
-    bool birthcheck = false;
-    bool issuecheck = false;
-    bool expirecheck = false;
+    if (strcmp(field, "byr")==0) {
+        int val = atoi(value);
+        if (val >= 1920 && val <= 2002)
+            return 1;
 
-    void addBirth(string str)
-    {
-        int birth = std::stoi(str, nullptr, 10);
-        if (birth > 1919 && 2003 > birth)
-        {
-            birthYear = birth;
-            birthcheck = true;
-        }
+        cout << "byr FAIL\n";
     }
-    void addIssue(string str)
-    {
+    if (strcmp(field, "iyr")==0) {
+        int val = atoi(value);
+        if (val >= 2010 && val <= 2020)
+            return 1;
 
-        int issue = std::stoi(str, nullptr, 10);
-        if (issue > 2009 && 2021 > issue)
-        {
-            issueYear = issue;
-            issuecheck = true;
-        }
+        cout << "iyr FAIL\n";
     }
-    void addExpire(string str)
-    {
-        int expire = std::stoi(str, nullptr, 10);
-        if (expire > 2019 && 2031 > expire)
-        {
-            expireYear = expire;
-            expirecheck = true;
-        }
-    }
-    void addHight(string hgt)
-    {
-        regex reg("(((1[5-8][0-9]|19[0-3])cm)|((59|6[0-9]|7[0-6])in))(\\s|$)");
-        smatch match;
-        while (regex_search(hgt, match, reg))
-        {
-            hightcheck = true;
-            hight = hgt;
-        }
-    }
-    void addHair(string hair)
-    {
-        regex reg("#[0-9a-f]{6}(\\s|$)");
-        smatch match;
-        while (regex_search(hair, match, reg))
-        {
-            haircheck = true;
-            hairColour = hair;
-        }
-    }
-    void addeye(string str)
-    {
-        regex reg("(amb|blu|brn|gry|grn|hzl|oth)(\\s|$)");
-        smatch match;
-        while (regex_search(str, match, reg))
-        {
-            eyecheck = true;
-            eyeColour = str;
-        }
-    }
-    void addId(string str)
-    {
-        regex reg("([0-9]{9})(\\s|$)");
-        smatch match;
-        while (regex_search(str, match, reg))
-        {
-            passIdcheck = true;
-            passId = str;
-            cout << "id \n";
-        }
-    }
-    bool checkall()
-    {
-        if (hightcheck &&
-            eyecheck &&
-            haircheck &&
-            passIdcheck &&
-            birthcheck &&
-            issuecheck &&
-            expirecheck)
-        {
-            return true;
-        }
-    }
-};
-enum string_code
-{
-    byr,
-    iyr,
-    eyr,
-    hgt,
-    hcl,
-    ecl,
-    pid,
-    cid
-};
+    if (strcmp(field, "eyr")==0) {
+        int val = atoi(value);
+        if (val >= 2020 && val <= 2030)
+            return 1;
 
-string_code hashit(std::string const &inString)
-{
-    if (inString == "byr")
-        return byr;
-    if (inString == "iyr")
-        return iyr;
-    if (inString == "eyr")
-        return eyr;
-    if (inString == "hgt")
-        return hgt;
-    if (inString == "hcl")
-        return hcl;
-    if (inString == "ecl")
-        return ecl;
-    if (inString == "pid")
-        return pid;
-    // if (inString == "cid")
-    //     return cid;
+        cout << "eyr FAIL\n";
+    }
+    if (strcmp(field, "hgt")==0) {
+        int val;
+        char height[3]; 
+        sscanf(value, "%d%s", &val,height);
+        //cout << val << " " << height;
+        if (strcmp(height, "") != 0) {
+            if (height && strcmp(height,"cm")==0)
+                if (val >= 150 && val <= 193)
+                    return 1;
+            if (height && strcmp(height,"in")==0)
+                if (val >= 59 && val <= 76)
+                    return 1;
+        }
+        cout << "hgt FAIL\n";
+    }
+    if (strcmp(field, "hcl")==0) {
+        int flag = 1;
+        if (strlen(value) == 7 && value[0] == '#') {
+            for (int i = 1; value[i] != '\0'; ++i) {
+                if ( (value[i] >= '0' && value[i] <= '9') || (value[i] >= 'a' && value[i] <= 'f'))
+                    continue;
+                flag = 0;
+                break;
+            }
+            if (flag)
+                return 1;
+        }
+        cout << "hcl FAIL\n";
+    }
+    if (strcmp(field, "ecl")==0) {
+        
+        if (strcmp(value, "amb") == 0)
+            return 1;
+        if (strcmp(value, "blu") == 0)
+            return 1;
+        if (strcmp(value, "brn") == 0)
+            return 1;
+        if (strcmp(value, "gry") == 0)
+            return 1;
+        if (strcmp(value, "grn") == 0)
+            return 1;
+        if (strcmp(value, "hzl") == 0)
+            return 1;
+        if (strcmp(value, "oth") == 0)
+            return 1;
+        cout << "ecl FAIL\n";
+    }
+    if (strcmp(field, "pid")==0) {
+        int flag = 1;
+        if (strlen(value) == 9) {
+            for (int i = 0; i < 9; ++i) {
+                if (value[i] >= '0' && value[i] <= '9')
+                    continue;
+                flag = 0;
+                break;
+            }
+        }
+        else 
+            flag = 0;
+        
+        if (flag)
+            return 1;
+
+        cout << "pid FAIL\n";
+    }
+    return 0;
 }
-std::vector<pass> data;
-vector<string> line;
-int valid = 0;
-int main()
-{
 
-    std::ifstream input;
-    input.open(Path);
-    if (!input.is_open())
-    {
-        std::cout << "not found or could not open\n";
-        return 1;
-    }
+int main(int argc, char** argv) {
 
-    string s;
-
-    int pos = 4;
-
+    ifstream infile;
+    infile.open(Path);
     
-    while (getline(input, s))
-    {
-pass structure;
-        //std::cout << s << "\n";
-        string str = s.substr(0, 3);
-        if (s.empty())
-        {
-            if (structure.checkall())
-            {
-                valid++;
-            }
-            data.push_back(structure);
-        }
-        else
-        {
+    string inp, inp2;
+    int valid_count = 0;
+    int num_fields=0;
 
-            switch (hashit(str))
-            {
-            case byr:
-                // checkC[0]++;
-                structure.addBirth(s.substr(pos));
-                break;
-            case iyr:
-                // checkC[1]++;
-                structure.addIssue(s.substr(pos));
-                break;
-            case eyr:
-                // checkC[2]++;
-                structure.addExpire(s.substr(pos));
-                break;
-            case hgt:
-                // checkC[3]++;
-                structure.addHight(s.substr(pos));
-                break;
-            case hcl:
-                // checkC[4]++;
-                structure.addHair(s.substr(pos));
-                break;
-            case ecl:
-                // checkC[5]++;
-                structure.addeye(s.substr(pos));
-                break;
-            case pid:
-                // checkC[6]++;
-                structure.addId(s.substr(pos));
-                break;
-
-            default:
-                break;
+    char field[1000];
+    char value[1000];
+    
+    while(getline(infile, inp)) {
+        if (inp != "") {
+            istringstream in;
+            in.str(inp);
+            while(in >> inp2) {
+                sscanf(inp2.c_str(),"%[^:]:%s",field, value);
+                if (valid(field, value)) 
+                    ++num_fields;
             }
         }
+        else {
+            if (num_fields == 7)
+                valid_count++;
+            num_fields = 0;
+        }
     }
-    for (size_t i = 0; i < 10; i++)
-    {
-        cout << "\n"
-             << line[i] << "\n";
-    }
+
+    cout <<  valid_count;
+    return 0;
 }

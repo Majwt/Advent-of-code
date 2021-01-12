@@ -1,0 +1,596 @@
+Passport nr: 1	is Accepted	New total:	1
+Passport nr: 2	isn't Valid
+Passport nr: 3	is Accepted	New total:	2
+Passport nr: 4	isn't Valid
+Passport nr: 5	is Accepted	New total:	3
+Passport nr: 6	isn't Valid
+Passport nr: 7	is Accepted	New total:	4
+Passport nr: 8	isn't Valid
+Passport nr: 9	is Accepted	New total:	5
+Passport nr: 10	is Accepted	New total:	6
+Passport nr: 11	is Accepted	New total:	7
+Passport nr: 12	isn't Valid
+Passport nr: 13	isn't Valid
+Passport nr: 14	is Accepted	New total:	8
+Passport nr: 15	isn't Valid
+Passport nr: 16	is Accepted	New total:	9
+Passport nr: 17	is Accepted	New total:	10
+Passport nr: 18	isn't Valid
+Passport nr: 19	isn't Valid
+Passport nr: 20	isn't Valid
+Passport nr: 21	is Accepted	New total:	11
+Passport nr: 22	is Accepted	New total:	12
+Passport nr: 23	is Accepted	New total:	13
+Passport nr: 24	is Accepted	New total:	14
+Passport nr: 25	isn't Valid
+Passport nr: 26	isn't Valid
+Passport nr: 27	is Accepted	New total:	15
+Passport nr: 28	is Accepted	New total:	16
+Passport nr: 29	isn't Valid
+Passport nr: 30	is Accepted	New total:	17
+Passport nr: 31	is Accepted	New total:	18
+Passport nr: 32	isn't Valid
+Passport nr: 33	is Accepted	New total:	19
+Passport nr: 34	isn't Valid
+Passport nr: 35	is Accepted	New total:	20
+Passport nr: 36	isn't Valid
+Passport nr: 37	is Accepted	New total:	21
+Passport nr: 38	isn't Valid
+Passport nr: 39	isn't Valid
+Passport nr: 40	isn't Valid
+Passport nr: 41	isn't Valid
+Passport nr: 42	is Accepted	New total:	22
+Passport nr: 43	isn't Valid
+Passport nr: 44	is Accepted	New total:	23
+Passport nr: 45	isn't Valid
+Passport nr: 46	is Accepted	New total:	24
+Passport nr: 47	is Accepted	New total:	25
+Passport nr: 48	isn't Valid
+Passport nr: 49	is Accepted	New total:	26
+Passport nr: 50	isn't Valid
+Passport nr: 51	is Accepted	New total:	27
+Passport nr: 52	is Accepted	New total:	28
+Passport nr: 53	isn't Valid
+Passport nr: 54	isn't Valid
+Passport nr: 55	is Accepted	New total:	29
+Passport nr: 56	isn't Valid
+Passport nr: 57	is Accepted	New total:	30
+Passport nr: 58	is Accepted	New total:	31
+Passport nr: 59	is Accepted	New total:	32
+Passport nr: 60	is Accepted	New total:	33
+Passport nr: 61	isn't Valid
+Passport nr: 62	is Accepted	New total:	34
+Passport nr: 63	isn't Valid
+Passport nr: 64	is Accepted	New total:	35
+Passport nr: 65	isn't Valid
+Passport nr: 66	is Accepted	New total:	36
+Passport nr: 67	is Accepted	New total:	37
+Passport nr: 68	isn't Valid
+Passport nr: 69	isn't Valid
+Passport nr: 70	is Accepted	New total:	38
+Passport nr: 71	is Accepted	New total:	39
+Passport nr: 72	is Accepted	New total:	40
+Passport nr: 73	isn't Valid
+Passport nr: 74	is Accepted	New total:	41
+Passport nr: 75	is Accepted	New total:	42
+Passport nr: 76	is Accepted	New total:	43
+Passport nr: 77	is Accepted	New total:	44
+Passport nr: 78	is Accepted	New total:	45
+Passport nr: 79	isn't Valid
+Passport nr: 80	isn't Valid
+Passport nr: 81	is Accepted	New total:	46
+Passport nr: 82	is Accepted	New total:	47
+Passport nr: 83	is Accepted	New total:	48
+Passport nr: 84	isn't Valid
+Passport nr: 85	is Accepted	New total:	49
+Passport nr: 86	isn't Valid
+Passport nr: 87	isn't Valid
+Passport nr: 88	isn't Valid
+Passport nr: 89	is Accepted	New total:	50
+Passport nr: 90	is Accepted	New total:	51
+Passport nr: 91	is Accepted	New total:	52
+Passport nr: 92	is Accepted	New total:	53
+Passport nr: 93	isn't Valid
+Passport nr: 94	isn't Valid
+Passport nr: 95	is Accepted	New total:	54
+Passport nr: 96	isn't Valid
+Passport nr: 97	isn't Valid
+Passport nr: 98	isn't Valid
+Passport nr: 99	isn't Valid
+Passport nr: 100	isn't Valid
+Passport nr: 101	isn't Valid
+Passport nr: 102	is Accepted	New total:	55
+Passport nr: 103	is Accepted	New total:	56
+Passport nr: 104	is Accepted	New total:	57
+Passport nr: 105	isn't Valid
+Passport nr: 106	isn't Valid
+Passport nr: 107	is Accepted	New total:	58
+Passport nr: 108	is Accepted	New total:	59
+Passport nr: 109	isn't Valid
+Passport nr: 110	is Accepted	New total:	60
+Passport nr: 111	is Accepted	New total:	61
+Passport nr: 112	is Accepted	New total:	62
+Passport nr: 113	is Accepted	New total:	63
+Passport nr: 114	isn't Valid
+Passport nr: 115	is Accepted	New total:	64
+Passport nr: 116	isn't Valid
+Passport nr: 117	isn't Valid
+Passport nr: 118	is Accepted	New total:	65
+Passport nr: 119	is Accepted	New total:	66
+Passport nr: 120	isn't Valid
+Passport nr: 121	isn't Valid
+Passport nr: 122	is Accepted	New total:	67
+Passport nr: 123	is Accepted	New total:	68
+Passport nr: 124	is Accepted	New total:	69
+Passport nr: 125	is Accepted	New total:	70
+Passport nr: 126	is Accepted	New total:	71
+Passport nr: 127	is Accepted	New total:	72
+Passport nr: 128	isn't Valid
+Passport nr: 129	is Accepted	New total:	73
+Passport nr: 130	isn't Valid
+Passport nr: 131	isn't Valid
+Passport nr: 132	isn't Valid
+Passport nr: 133	is Accepted	New total:	74
+Passport nr: 134	isn't Valid
+Passport nr: 135	isn't Valid
+Passport nr: 136	isn't Valid
+Passport nr: 137	isn't Valid
+Passport nr: 138	isn't Valid
+Passport nr: 139	is Accepted	New total:	75
+Passport nr: 140	isn't Valid
+Passport nr: 141	isn't Valid
+Passport nr: 142	is Accepted	New total:	76
+Passport nr: 143	isn't Valid
+Passport nr: 144	isn't Valid
+Passport nr: 145	isn't Valid
+Passport nr: 146	is Accepted	New total:	77
+Passport nr: 147	is Accepted	New total:	78
+Passport nr: 148	is Accepted	New total:	79
+Passport nr: 149	is Accepted	New total:	80
+Passport nr: 150	isn't Valid
+Passport nr: 151	is Accepted	New total:	81
+Passport nr: 152	is Accepted	New total:	82
+Passport nr: 153	isn't Valid
+Passport nr: 154	is Accepted	New total:	83
+Passport nr: 155	is Accepted	New total:	84
+Passport nr: 156	isn't Valid
+Passport nr: 157	is Accepted	New total:	85
+Passport nr: 158	is Accepted	New total:	86
+Passport nr: 159	is Accepted	New total:	87
+Passport nr: 160	isn't Valid
+Passport nr: 161	is Accepted	New total:	88
+Passport nr: 162	is Accepted	New total:	89
+Passport nr: 163	is Accepted	New total:	90
+Passport nr: 164	is Accepted	New total:	91
+Passport nr: 165	is Accepted	New total:	92
+Passport nr: 166	isn't Valid
+Passport nr: 167	isn't Valid
+Passport nr: 168	isn't Valid
+Passport nr: 169	isn't Valid
+Passport nr: 170	is Accepted	New total:	93
+Passport nr: 171	isn't Valid
+Passport nr: 172	is Accepted	New total:	94
+Passport nr: 173	isn't Valid
+Passport nr: 174	isn't Valid
+Passport nr: 175	is Accepted	New total:	95
+Passport nr: 176	isn't Valid
+Passport nr: 177	isn't Valid
+Passport nr: 178	isn't Valid
+Passport nr: 179	is Accepted	New total:	96
+Passport nr: 180	is Accepted	New total:	97
+Passport nr: 181	is Accepted	New total:	98
+Passport nr: 182	is Accepted	New total:	99
+Passport nr: 183	is Accepted	New total:	100
+Passport nr: 184	is Accepted	New total:	101
+Passport nr: 185	isn't Valid
+Passport nr: 186	isn't Valid
+Passport nr: 187	isn't Valid
+Passport nr: 188	isn't Valid
+Passport nr: 189	is Accepted	New total:	102
+Passport nr: 190	is Accepted	New total:	103
+Passport nr: 191	isn't Valid
+Passport nr: 192	is Accepted	New total:	104
+Passport nr: 193	is Accepted	New total:	105
+Passport nr: 194	isn't Valid
+Passport nr: 195	is Accepted	New total:	106
+Passport nr: 196	isn't Valid
+Passport nr: 197	isn't Valid
+Passport nr: 198	is Accepted	New total:	107
+Passport nr: 199	is Accepted	New total:	108
+Passport nr: 200	is Accepted	New total:	109
+Passport nr: 201	isn't Valid
+Passport nr: 202	is Accepted	New total:	110
+Passport nr: 203	isn't Valid
+Passport nr: 204	isn't Valid
+Passport nr: 205	isn't Valid
+Passport nr: 206	is Accepted	New total:	111
+Passport nr: 207	isn't Valid
+Passport nr: 208	is Accepted	New total:	112
+Passport nr: 209	isn't Valid
+Passport nr: 210	is Accepted	New total:	113
+Passport nr: 211	is Accepted	New total:	114
+Passport nr: 212	is Accepted	New total:	115
+Passport nr: 213	isn't Valid
+Passport nr: 214	isn't Valid
+Passport nr: 215	is Accepted	New total:	116
+Passport nr: 216	is Accepted	New total:	117
+Passport nr: 217	is Accepted	New total:	118
+Passport nr: 218	is Accepted	New total:	119
+Passport nr: 219	isn't Valid
+Passport nr: 220	isn't Valid
+Passport nr: 221	is Accepted	New total:	120
+Passport nr: 222	isn't Valid
+Passport nr: 223	isn't Valid
+Passport nr: 224	is Accepted	New total:	121
+Passport nr: 225	isn't Valid
+Passport nr: 226	is Accepted	New total:	122
+Passport nr: 227	isn't Valid
+Passport nr: 228	is Accepted	New total:	123
+Passport nr: 229	isn't Valid
+Passport nr: 230	is Accepted	New total:	124
+Passport nr: 231	is Accepted	New total:	125
+Passport nr: 232	is Accepted	New total:	126
+Passport nr: 233	is Accepted	New total:	127
+Passport nr: 234	is Accepted	New total:	128
+Passport nr: 235	isn't Valid
+Passport nr: 236	isn't Valid
+Passport nr: 237	isn't Valid
+Passport nr: 238	is Accepted	New total:	129
+Passport nr: 239	isn't Valid
+Passport nr: 240	isn't Valid
+Passport nr: 241	isn't Valid
+Passport nr: 242	isn't Valid
+Passport nr: 243	is Accepted	New total:	130
+Passport nr: 244	isn't Valid
+Passport nr: 245	isn't Valid
+Passport nr: 246	isn't Valid
+Passport nr: 247	is Accepted	New total:	131
+Passport nr: 248	isn't Valid
+Passport nr: 249	isn't Valid
+Passport nr: 250	isn't Valid
+Passport nr: 251	is Accepted	New total:	132
+Passport nr: 252	is Accepted	New total:	133
+Passport nr: 253	isn't Valid
+Passport nr: 254	isn't Valid
+Passport nr: 255	is Accepted	New total:	134
+Passport nr: 256	is Accepted	New total:	135
+Passport nr: 257	is Accepted	New total:	136
+Passport nr: 258	isn't Valid
+Passport nr: 259	is Accepted	New total:	137
+Passport nr: 260	is Accepted	New total:	138
+Passport nr: 261	is Accepted	New total:	139
+Passport nr: 262	is Accepted	New total:	140
+Passport nr: 263	is Accepted	New total:	141
+Passport nr: 264	isn't Valid
+Passport nr: 265	isn't Valid
+Passport nr: 266	isn't Valid
+Passport nr: 267	isn't Valid
+Passport nr: 268	isn't Valid
+Passport nr: 269	is Accepted	New total:	142
+Passport nr: 270	isn't Valid
+Passport nr: 271	isn't Valid
+Passport nr: 272	isn't Valid
+Passport nr: 273	isn't Valid
+Passport nr: 274	is Accepted	New total:	143
+Passport nr: 275	is Accepted	New total:	144
+Passport nr: 276	is Accepted	New total:	145
+Passport nr: 277	is Accepted	New total:	146
+Passport nr: 278	is Accepted	New total:	147
+Passport nr: 279	isn't Valid
+Passport nr: 280	isn't Valid
+Passport nr: 281	isn't Valid
+Passport nr: 282	is Accepted	New total:	148
+Passport nr: 283	isn't Valid
+Passport nr: 284	is Accepted	New total:	149
+Passport nr: 285	isn't Valid
+Passport nr: 286	is Accepted	New total:	150
+Passport nr: 287	isn't Valid
+Passport nr: 288	is Accepted	New total:	151
+Passport nr: 289	is Accepted	New total:	152
+Passport nr: 290	is Accepted	New total:	153
+
+153 valid passports
+290total passports
+
+
+
+
+
+
+
+
+
+
+Passport nr: 1	is Accepted	New total:	1
+Passport nr: 2	isn't Valid
+Passport nr: 3	is Accepted	New total:	2
+Passport nr: 4	isn't Valid
+Passport nr: 5	is Accepted	New total:	3
+Passport nr: 6	isn't Valid
+Passport nr: 7	is Accepted	New total:	4
+Passport nr: 8	isn't Valid
+Passport nr: 9	is Accepted	New total:	5
+Passport nr: 10	is Accepted	New total:	6
+Passport nr: 11	is Accepted	New total:	7
+Passport nr: 12	isn't Valid
+Passport nr: 13	isn't Valid
+Passport nr: 14	is Accepted	New total:	8
+Passport nr: 15	isn't Valid
+Passport nr: 16	is Accepted	New total:	9
+Passport nr: 17	is Accepted	New total:	10
+Passport nr: 18	isn't Valid
+Passport nr: 19	isn't Valid
+Passport nr: 20	isn't Valid
+Passport nr: 21	is Accepted	New total:	11
+Passport nr: 22	is Accepted	New total:	12
+Passport nr: 23	is Accepted	New total:	13
+Passport nr: 24	is Accepted	New total:	14
+Passport nr: 25	isn't Valid
+Passport nr: 26	isn't Valid
+Passport nr: 27	is Accepted	New total:	15
+Passport nr: 28	is Accepted	New total:	16
+Passport nr: 29	isn't Valid
+Passport nr: 30	is Accepted	New total:	17
+Passport nr: 31	is Accepted	New total:	18
+Passport nr: 32	isn't Valid
+Passport nr: 33	is Accepted	New total:	19
+Passport nr: 34	isn't Valid
+Passport nr: 35	is Accepted	New total:	20
+Passport nr: 36	isn't Valid
+Passport nr: 37	is Accepted	New total:	21
+Passport nr: 38	isn't Valid
+Passport nr: 39	isn't Valid
+Passport nr: 40	isn't Valid
+Passport nr: 41	isn't Valid
+Passport nr: 42	is Accepted	New total:	22
+Passport nr: 43	isn't Valid
+Passport nr: 44	is Accepted	New total:	23
+Passport nr: 45	isn't Valid
+Passport nr: 46	is Accepted	New total:	24
+Passport nr: 47	is Accepted	New total:	25
+Passport nr: 48	isn't Valid
+Passport nr: 49	is Accepted	New total:	26
+Passport nr: 50	isn't Valid
+Passport nr: 51	is Accepted	New total:	27
+Passport nr: 52	is Accepted	New total:	28
+Passport nr: 53	isn't Valid
+Passport nr: 54	isn't Valid
+Passport nr: 55	is Accepted	New total:	29
+Passport nr: 56	isn't Valid
+Passport nr: 57	is Accepted	New total:	30
+Passport nr: 58	is Accepted	New total:	31
+Passport nr: 59	is Accepted	New total:	32
+Passport nr: 60	is Accepted	New total:	33
+Passport nr: 61	isn't Valid
+Passport nr: 62	is Accepted	New total:	34
+Passport nr: 63	is Accepted	New total:	35
+Passport nr: 64	is Accepted	New total:	36
+Passport nr: 65	isn't Valid
+Passport nr: 66	is Accepted	New total:	37
+Passport nr: 67	is Accepted	New total:	38
+Passport nr: 68	isn't Valid
+Passport nr: 69	isn't Valid
+Passport nr: 70	is Accepted	New total:	39
+Passport nr: 71	is Accepted	New total:	40
+Passport nr: 72	is Accepted	New total:	41
+Passport nr: 73	isn't Valid
+Passport nr: 74	is Accepted	New total:	42
+Passport nr: 75	is Accepted	New total:	43
+Passport nr: 76	is Accepted	New total:	44
+Passport nr: 77	is Accepted	New total:	45
+Passport nr: 78	is Accepted	New total:	46
+Passport nr: 79	isn't Valid
+Passport nr: 80	isn't Valid
+Passport nr: 81	is Accepted	New total:	47
+Passport nr: 82	is Accepted	New total:	48
+Passport nr: 83	is Accepted	New total:	49
+Passport nr: 84	isn't Valid
+Passport nr: 85	is Accepted	New total:	50
+Passport nr: 86	isn't Valid
+Passport nr: 87	isn't Valid
+Passport nr: 88	isn't Valid
+Passport nr: 89	is Accepted	New total:	51
+Passport nr: 90	is Accepted	New total:	52
+Passport nr: 91	is Accepted	New total:	53
+Passport nr: 92	is Accepted	New total:	54
+Passport nr: 93	is Accepted	New total:	55
+Passport nr: 94	isn't Valid
+Passport nr: 95	is Accepted	New total:	56
+Passport nr: 96	isn't Valid
+Passport nr: 97	isn't Valid
+Passport nr: 98	isn't Valid
+Passport nr: 99	is Accepted	New total:	57
+Passport nr: 100	isn't Valid
+Passport nr: 101	isn't Valid
+Passport nr: 102	is Accepted	New total:	58
+Passport nr: 103	is Accepted	New total:	59
+Passport nr: 104	is Accepted	New total:	60
+Passport nr: 105	isn't Valid
+Passport nr: 106	isn't Valid
+Passport nr: 107	is Accepted	New total:	61
+Passport nr: 108	is Accepted	New total:	62
+Passport nr: 109	isn't Valid
+Passport nr: 110	is Accepted	New total:	63
+Passport nr: 111	is Accepted	New total:	64
+Passport nr: 112	is Accepted	New total:	65
+Passport nr: 113	is Accepted	New total:	66
+Passport nr: 114	isn't Valid
+Passport nr: 115	is Accepted	New total:	67
+Passport nr: 116	isn't Valid
+Passport nr: 117	is Accepted	New total:	68
+Passport nr: 118	is Accepted	New total:	69
+Passport nr: 119	is Accepted	New total:	70
+Passport nr: 120	isn't Valid
+Passport nr: 121	isn't Valid
+Passport nr: 122	is Accepted	New total:	71
+Passport nr: 123	is Accepted	New total:	72
+Passport nr: 124	is Accepted	New total:	73
+Passport nr: 125	is Accepted	New total:	74
+Passport nr: 126	is Accepted	New total:	75
+Passport nr: 127	is Accepted	New total:	76
+Passport nr: 128	isn't Valid
+Passport nr: 129	is Accepted	New total:	77
+Passport nr: 130	isn't Valid
+Passport nr: 131	isn't Valid
+Passport nr: 132	isn't Valid
+Passport nr: 133	is Accepted	New total:	78
+Passport nr: 134	isn't Valid
+Passport nr: 135	isn't Valid
+Passport nr: 136	isn't Valid
+Passport nr: 137	isn't Valid
+Passport nr: 138	isn't Valid
+Passport nr: 139	is Accepted	New total:	79
+Passport nr: 140	isn't Valid
+Passport nr: 141	isn't Valid
+Passport nr: 142	is Accepted	New total:	80
+Passport nr: 143	isn't Valid
+Passport nr: 144	isn't Valid
+Passport nr: 145	isn't Valid
+Passport nr: 146	is Accepted	New total:	81
+Passport nr: 147	is Accepted	New total:	82
+Passport nr: 148	is Accepted	New total:	83
+Passport nr: 149	is Accepted	New total:	84
+Passport nr: 150	isn't Valid
+Passport nr: 151	is Accepted	New total:	85
+Passport nr: 152	is Accepted	New total:	86
+Passport nr: 153	isn't Valid
+Passport nr: 154	is Accepted	New total:	87
+Passport nr: 155	is Accepted	New total:	88
+Passport nr: 156	isn't Valid
+Passport nr: 157	is Accepted	New total:	89
+Passport nr: 158	is Accepted	New total:	90
+Passport nr: 159	is Accepted	New total:	91
+Passport nr: 160	isn't Valid
+Passport nr: 161	is Accepted	New total:	92
+Passport nr: 162	is Accepted	New total:	93
+Passport nr: 163	is Accepted	New total:	94
+Passport nr: 164	is Accepted	New total:	95
+Passport nr: 165	is Accepted	New total:	96
+Passport nr: 166	isn't Valid
+Passport nr: 167	isn't Valid
+Passport nr: 168	isn't Valid
+Passport nr: 169	isn't Valid
+Passport nr: 170	is Accepted	New total:	97
+Passport nr: 171	isn't Valid
+Passport nr: 172	is Accepted	New total:	98
+Passport nr: 173	isn't Valid
+Passport nr: 174	isn't Valid
+Passport nr: 175	is Accepted	New total:	99
+Passport nr: 176	isn't Valid
+Passport nr: 177	isn't Valid
+Passport nr: 178	isn't Valid
+Passport nr: 179	is Accepted	New total:	100
+Passport nr: 180	is Accepted	New total:	101
+Passport nr: 181	is Accepted	New total:	102
+Passport nr: 182	is Accepted	New total:	103
+Passport nr: 183	is Accepted	New total:	104
+Passport nr: 184	is Accepted	New total:	105
+Passport nr: 185	isn't Valid
+Passport nr: 186	isn't Valid
+Passport nr: 187	isn't Valid
+Passport nr: 188	isn't Valid
+Passport nr: 189	is Accepted	New total:	106
+Passport nr: 190	is Accepted	New total:	107
+Passport nr: 191	isn't Valid
+Passport nr: 192	is Accepted	New total:	108
+Passport nr: 193	is Accepted	New total:	109
+Passport nr: 194	isn't Valid
+Passport nr: 195	is Accepted	New total:	110
+Passport nr: 196	isn't Valid
+Passport nr: 197	isn't Valid
+Passport nr: 198	is Accepted	New total:	111
+Passport nr: 199	is Accepted	New total:	112
+Passport nr: 200	is Accepted	New total:	113
+Passport nr: 201	isn't Valid
+Passport nr: 202	is Accepted	New total:	114
+Passport nr: 203	isn't Valid
+Passport nr: 204	isn't Valid
+Passport nr: 205	isn't Valid
+Passport nr: 206	is Accepted	New total:	115
+Passport nr: 207	isn't Valid
+Passport nr: 208	is Accepted	New total:	116
+Passport nr: 209	isn't Valid
+Passport nr: 210	is Accepted	New total:	117
+Passport nr: 211	is Accepted	New total:	118
+Passport nr: 212	is Accepted	New total:	119
+Passport nr: 213	isn't Valid
+Passport nr: 214	isn't Valid
+Passport nr: 215	is Accepted	New total:	120
+Passport nr: 216	is Accepted	New total:	121
+Passport nr: 217	is Accepted	New total:	122
+Passport nr: 218	is Accepted	New total:	123
+Passport nr: 219	isn't Valid
+Passport nr: 220	isn't Valid
+Passport nr: 221	is Accepted	New total:	124
+Passport nr: 222	isn't Valid
+Passport nr: 223	isn't Valid
+Passport nr: 224	is Accepted	New total:	125
+Passport nr: 225	isn't Valid
+Passport nr: 226	is Accepted	New total:	126
+Passport nr: 227	isn't Valid
+Passport nr: 228	is Accepted	New total:	127
+Passport nr: 229	isn't Valid
+Passport nr: 230	is Accepted	New total:	128
+Passport nr: 231	is Accepted	New total:	129
+Passport nr: 232	is Accepted	New total:	130
+Passport nr: 233	is Accepted	New total:	131
+Passport nr: 234	is Accepted	New total:	132
+Passport nr: 235	isn't Valid
+Passport nr: 236	isn't Valid
+Passport nr: 237	isn't Valid
+Passport nr: 238	is Accepted	New total:	133
+Passport nr: 239	isn't Valid
+Passport nr: 240	isn't Valid
+Passport nr: 241	isn't Valid
+Passport nr: 242	isn't Valid
+Passport nr: 243	is Accepted	New total:	134
+Passport nr: 244	isn't Valid
+Passport nr: 245	isn't Valid
+Passport nr: 246	isn't Valid
+Passport nr: 247	is Accepted	New total:	135
+Passport nr: 248	isn't Valid
+Passport nr: 249	isn't Valid
+Passport nr: 250	isn't Valid
+Passport nr: 251	is Accepted	New total:	136
+Passport nr: 252	is Accepted	New total:	137
+Passport nr: 253	isn't Valid
+Passport nr: 254	isn't Valid
+Passport nr: 255	is Accepted	New total:	138
+Passport nr: 256	is Accepted	New total:	139
+Passport nr: 257	is Accepted	New total:	140
+Passport nr: 258	isn't Valid
+Passport nr: 259	is Accepted	New total:	141
+Passport nr: 260	is Accepted	New total:	142
+Passport nr: 261	is Accepted	New total:	143
+Passport nr: 262	is Accepted	New total:	144
+Passport nr: 263	is Accepted	New total:	145
+Passport nr: 264	isn't Valid
+Passport nr: 265	isn't Valid
+Passport nr: 266	isn't Valid
+Passport nr: 267	isn't Valid
+Passport nr: 268	isn't Valid
+Passport nr: 269	is Accepted	New total:	146
+Passport nr: 270	isn't Valid
+Passport nr: 271	isn't Valid
+Passport nr: 272	isn't Valid
+Passport nr: 273	isn't Valid
+Passport nr: 274	is Accepted	New total:	147
+Passport nr: 275	is Accepted	New total:	148
+Passport nr: 276	is Accepted	New total:	149
+Passport nr: 277	is Accepted	New total:	150
+Passport nr: 278	is Accepted	New total:	151
+Passport nr: 279	isn't Valid
+Passport nr: 280	isn't Valid
+Passport nr: 281	isn't Valid
+Passport nr: 282	is Accepted	New total:	152
+Passport nr: 283	isn't Valid
+Passport nr: 284	is Accepted	New total:	153
+Passport nr: 285	isn't Valid
+Passport nr: 286	is Accepted	New total:	154
+Passport nr: 287	isn't Valid
+Passport nr: 288	is Accepted	New total:	155
+Passport nr: 289	is Accepted	New total:	156
+Passport nr: 290	is Accepted	New total:	157
+
+157 valid passports
+290total passports
