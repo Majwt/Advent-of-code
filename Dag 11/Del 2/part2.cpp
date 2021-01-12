@@ -12,9 +12,79 @@ vector<string> original;
 vector<string> lines;
 std::string Path = "..//input.txt";
 //string Path = "..//example.txt"; // andra fil vägen
-char empty = 'L';
+// string Path = "..//miniTest.txt"; // andra fil vägen
+
+/**
+ * *instructioner
+ * 
+ * 
+ * 
+ */
+
+char emptySeat = 'L';
 char occupied = '#';
 char flor = '.';
+
+int searchDir(vector<string> pre, int sx, int sy, int dx, int dy)
+{
+
+    int x = dx;
+    int y = dy;
+    int hit = 0;
+    
+    while (pre[sy + y][sx + x] == flor)
+    {
+        
+
+            if (sy + y == 0 && y != 0)
+            {
+                // cout << "\tsy + y == 0\t";
+                break;
+            }
+    
+
+            if (sy + y == pre.size() - 1 && sy != pre.size() - 1)
+            {
+                // cout << "\tsy + y == pre.size() - 1\t";
+                break;
+            }
+        
+
+       
+
+            if (sx + x == 0 && x != 0)
+            {
+                // cout << "\tsx + x == 0\t";
+                break;
+            }
+        
+        
+
+            if (sx + x == pre.size() - 1 && sx != pre.size() - 1)
+            {
+                // cout << "\tsx + x == pre.size() - 1\t";
+                break;
+            }
+        
+        y += dy;
+        x += dx;
+    }
+    // y += dy;
+    // x += dx;
+    if (pre[sy + y][sx + x] == occupied)
+    {
+        hit = 1;
+    }
+    else if (pre[sy + y][sx + x] == emptySeat)
+    {
+        hit = 0;
+    } 
+
+    // cout << "\thit: " << hit << "\t|\t";
+    // cout << sy << "+" << y << "  \t= " << sy + y << "  \t" << sx << "+" << x << "  \t= " << sx + x << "  \t" << pre[sy + y][sx + x] << endl;
+
+    return hit;
+}
 
 int doLine()
 {
@@ -24,116 +94,111 @@ int doLine()
     for (auto &&i : lines)
     {
         previous.push_back(i);
-        cout << i << endl;
+        for (auto &&v : i)
+        {
+            // cout << v << " ";
+        }
+        // cout << endl;
     }
-    cout << endl;
+    
     for (int v = 0; v < previous.size(); v++)
     {
-      
-        
+
         for (int h = 0; h < previous[v].size(); h++)
         {
-        /**
+            /**
         * *Horizontel
         */
+
             char seat = previous[v][h];
             if (seat == flor)
             {
                 continue;
             }
-
+            // cout << endl << v << "/" << h << endl;
             if (h != 0)
             {
-
-                if (previous[v][h - 1] == occupied)
-                {
-                    near++;
-                }
-            }
-            if (h != previous[v].size()-1)
-            {
-
-                if (previous[v][h + 1] == occupied)
-                {
-                    near++;
-                }
+                // cout << "<-  \t" << near;
+                near += searchDir(previous, h, v, -1, 0); // <-
             }
 
-            if (v != previous.size()-1)
+            if (h != previous[v].size() - 1)
             {
-                if (previous[v + 1][h - 1] == occupied)
+                // cout << "->  \t" << near;
+                near += searchDir(previous, h, v, 1, 0); // ->
+            }
+
+            if (v != previous.size() - 1)
+            {
+                // cout << "v   \t" << near;
+                near += searchDir(previous, h, v, 0, 1); // .|.
+                if (h != 0)
                 {
-                    near++;
+                    // cout << "v<  \t" << near;
+                    near += searchDir(previous, h, v, -1, 1); // ./
                 }
-                if (previous[v + 1][h] == occupied)
+                if (h != previous[v].size() - 1)
                 {
-                    near++;
-                }
-                if (previous[v + 1][h + 1] == occupied)
-                {
-                    near++;
+                    // cout << ">v  \t" << near;
+                    near += searchDir(previous, h, v, 1, 1); // \.
                 }
             }
             if (v != 0)
             {
+                // cout << "^   \t" << near;
+                near += searchDir(previous, h, v, 0, -1); //0,-1 ^
 
                 if (h != 0)
                 {
-
-                    if (previous[v - 1][h - 1] == occupied)
-                    {
-                        near++;
-                    }
+                    // cout << "^<  \t" << near;
+                    near += searchDir(previous, h, v, -1, -1); // ^\.
                 }
 
-                if (previous[v - 1][h] == occupied)
+                if (h != previous[v].size() - 1)
                 {
-                    near++;
-                }
-                if (h != previous[v].size()-1)
-                {
-
-                    if (previous[v - 1][h + 1] == occupied)
-                    {
-                        near++;
-                    }
+                    // cout << ">^  \t" << near;
+                    near += searchDir(previous, h, v, 1, -1); // /^
                 }
             }
             //cout << "near: " << near << endl;
-            if (seat == empty && near == 0)
+            if (seat == emptySeat && near == 0)
             {
                 lines[v][h] = occupied;
                 changes++;
             }
-            if (seat == occupied && near >= 4)
+            if (seat == occupied && near >= 5)
             {
-                lines[v][h] = empty;
+                lines[v][h] = emptySeat;
                 changes++;
             }
+
             near = 0;
         }
     }
     return changes;
-
 }
 int totOccupied()
 {
     int total = 0;
+    cout << endl;
     for (auto &&i : lines)
     {
+        
         for (auto &&v : i)
         {
-            if (v == occupied) {
+            if (v == occupied)
+            {
                 total++;
             }
         }
-        
+
     }
+
     return total;
 }
 int main()
 {
-
+    int temp = 0;
     std::ifstream input;
     input.open(Path);
     if (!input.is_open())
@@ -144,17 +209,31 @@ int main()
 
     while (getline(input, l))
     {
-        std::cout << l << '\n';
+        // std::cout << l << '\n';
         lines.push_back(l);
         original.push_back(l);
     }
+
+
+    while (doLine() != 0)
+    {
+
+         cout << temp << endl;
+         temp++;
+    }
     
-    while(doLine() != 0) {
-        
-    
-    cout << endl;
-}
-if (doLine() == 0)
-    cout << "Total Occupied Seats: " << totOccupied() << endl;
-    
+    if (doLine() == 0)
+        cout << endl << "Total Occupied Seats: "<< totOccupied() << endl;
+
+cout << endl;
+    // for (auto &&i : lines)
+    // {
+    //     cout << endl;
+    //     for (auto &&v : i)
+    //     {
+    //     cout << v <<" ";
+            
+    //     }
+
+    // }
 }

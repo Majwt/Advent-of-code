@@ -12,7 +12,7 @@ vector<string> original;
 vector<string> lines;
 std::string Path = "..//input.txt";
 //string Path = "..//example.txt"; // andra fil vägen
-char empty = 'L';
+char emptySeat = 'L';
 char occupied = '#';
 char flor = '.';
 
@@ -100,14 +100,14 @@ int doLine()
                 }
             }
             //cout << "near: " << near << endl;
-            if (seat == empty && near == 0)
+            if (seat == emptySeat && near == 0)
             {
                 lines[v][h] = occupied;
                 changes++;
             }
             if (seat == occupied && near >= 4)
             {
-                lines[v][h] = empty;
+                lines[v][h] = emptySeat;
                 changes++;
             }
             near = 0;
