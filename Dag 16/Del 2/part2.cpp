@@ -36,7 +36,6 @@ struct tick
 vector<con> conds;
 
 vector<tick> tickets;
-vector<vector<string>> hit;
 int yes, no;
 
 void condis(string l4)
@@ -69,6 +68,7 @@ void ticketgrab(string l2)
     }
     //cout << endl;
     tickets.push_back(ticket);
+    ticket.content.clear();
     
 }
 
@@ -105,101 +105,84 @@ int fullGetInput()
     return 0;
 }
 int sum = 0;
-int ind = 1;
+    // int t = 9;
+vector<vector<string>> hit;
 void checkTicket(tick y)
 {
+    
     vector<string> temp2;
+    for (size_t t = 0; t < conds.size() ; t++)
+    {
     for (size_t n = 0; n < y.content.size(); n++)
     {
-        /* code */
     
-    int x = y.content[n];
-    int temp = x;
+    
+    int temp = y.content[n];
 
-    int compatible = 0;
     int counter = 0;
-    for (auto &&i : conds)
-    {
-        
-        if ((temp - (i.low1)) >= 0 && ((i.high1) - temp) >= 0)
+        if ((temp - (conds[t].low1) >= 0) && ((conds[t].high1) - temp >= 0))
         {
-            temp2.push_back("Y");
+            temp2.push_back(".");
             // cout << "yes | ";
-            // cout << i.low1 << " < " << temp << " < " << i.high1 << "  ";
-            // cout << i.low2 << " < " << temp << " < " << i.high2;
-            // cout << "\t|name: " << i.name << endl;
-           // cout << "pbno| " << i.low2 << "  <  " << temp << "  <  " << i.high2 << endl;
+            // cout << conds[t].low1 << " < " << temp << " < " << conds[t].high1 << "  ";
+            // cout << conds[t].low2 << " < " << temp << " < " << conds[t].high2;
+            // cout << "\t|name: " << conds[t].name << endl;
+        //    cout << "pbno| " << conds[t].low2 << "  <  " << temp << "  <  " << conds[t].high2 << endl;
         }
-        else if ((temp - (i.low2)) >= 0 && ((i.high2) - temp) >= 0)
+        else if ((temp - (conds[t].low2) >= 0) && ((conds[t].high2) - temp >= 0))
         {
-            temp2.push_back("Y");
+            temp2.push_back(".");
             // cout << "yes | ";
-            // cout << i.low1 << " < " << temp << " < " << i.high1 << "  ";
-            // cout << i.low2 << " < " << temp << " < " << i.high2;
-            // cout << "\t|name: " << i.name << endl;
+            // cout << conds[t].low1 << " < " << temp << " < " << conds[t].high1 << "  ";
+            // cout << conds[t].low2 << " < " << temp << " < " << conds[t].high2;
+            // cout << "\t|name: " << conds[t].name << endl;
 
         }
         else
         {
             temp2.push_back("N");
-
-            // cout << "no  | " << i.low1 << "  <  " << temp << "  <  " << i.high1 << endl;
-            // cout << "no  | " << i.low2 << "  <  " << temp << "  <  " << i.high2 << endl;
-            compatible++;
+            //  cout << "no  | " << conds[t].low1 << "  <  " << temp << "  <  " << conds[t].high1 << endl;
+            //  cout << "no  | " << conds[t].low2 << "  <  " << temp << "  <  " << conds[t].high2 << endl;
         }
 
-    }
-    hit.push_back(temp2);
-    temp2.clear();
-    cout << "value: " << x << " ";
-    if (compatible == conds.size())
-    {
-        sum += x;
-        no++;
-        cout << "returned False" << "  no nr: ";
-        cout << no << "\tcurrent sum: " << sum << endl;
+     }
+             
+        hit.push_back(temp2);
         
+        temp2.clear();
+    
+
+    
+    
     }
-    else
-    {
-        yes++;
-        cout << "returned True" << endl;
-    }
-    counter++;
-    // cout << "------------------------- \t Index: " << ind << endl;
-    ind++;
-    }
+
+    
+    
+    
+    
+     
 }
 int main()
 {
 
     // cout << "------------------------- \t Index: " << ind << endl;
-    ind++;
     fullGetInput();
-    //for (auto &&i : tickets)
-    //{
-    //    checkTicket(i);
-    //    
-    //}
-    for_each(tickets.begin(),tickets.end(),checkTicket);
-
-   
-
-    cout << "    p1,  p2,  p3,  p4,  p5,  p6,  p7,  p8,  p9,  p10, p11, p12, p13, p14, p15, p16, p17, p18, p19, p20" << endl;
-
-   for (size_t i = 0; i < 231; i++)
-   {
-       //cout << conds[i].name << ": ";
-       cout << "  : ";
-        
-        for (size_t n = 0; n < hit[i].size(); n++)
-        {
-            cout << hit[i][n] << "    ";
+    for (auto &&i : tickets)
+    {
+       checkTicket(i);
+       
+    }
+    for (size_t i = 0; i < hit.size(); i++)
+    {
+        if (i % 20 == 0) {
+            cout << endl;
         }
+        for (auto &&v : hit[i])
+        {
+            cout << v << " ";
+        }
+        cout << i % 20;
+        cout << "\tname: " << conds[i%20].name << endl;
+    }
         
-        cout << endl;
-
-   }
-    
-    
 }

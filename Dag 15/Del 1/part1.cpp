@@ -8,29 +8,13 @@ using namespace std;
 
 std::string l;
 std::string Path = "..//input.txt";
-vector<int> starting;
-vector<int> spoken;
-vector<int> duplicates;
 // std::string Path = "..//example.txt"; // andra fil vägen
-void myFucntion()
-{
-    for (size_t turn = 1; turn < 2020; turn++)
-    {
-        for (size_t i = 0; i < duplicates.size()-1; i++)
-        {
-            if (spoken[turn] == duplicates[i])
-            {
-              
+vector<string> starting;
+vector<int> spoken;
+vector<string> duplicates;
 
-            } else {
+void myFunction();
 
-            }
-            
-        }
-
-    }
-    
-}
 int main()
 {
 
@@ -44,10 +28,46 @@ int main()
 
     while (getline(input, l))
     {
-        std::cout << l << '\n';
-        starting.push_back(stoi(l, nullptr, 10));
+        // std::cout << l << '\n';
+
         spoken.push_back(stoi(l, nullptr, 10));
-        duplicates.push_back(stoi(l, nullptr, 10));
     }
-    myFucntion();
+    for (size_t i = 0; i <  2019; i++)
+    {
+        spoken.push_back(0);
+    }
+    cout << spoken.size() << endl;
+    cout << spoken[0] << "\tturn: " << 0 << endl;
+    cout << spoken[1] << "\tturn: " << 1 << endl;
+    cout << spoken[2] << "\tturn: " << 2 << endl;
+    cout << spoken[3] << "\tturn: " << 3 << endl;
+    cout << spoken[4] << "\tturn: " << 4 << endl;
+    cout << spoken[5] << "\tturn: " << 5 << endl;
+    cout << spoken[6] << "\tturn: " << 6 << endl;
+    myFunction();
+
+    cout << endl
+         << endl
+         << spoken[2019] << endl;
+}
+
+void myFunction()
+{
+    for (int i = 7; i < 2019; i++)
+    {
+
+        int n = 0;
+        cout << spoken[i] <<'\t' << i <<endl;
+        for (int v = i - 1; v >= 0; v--)
+        {
+
+            if (spoken[v] == spoken[i])
+            {
+                spoken[i + 1] = i - v;
+
+                break;
+            }
+        }
+        
+    }
 }
