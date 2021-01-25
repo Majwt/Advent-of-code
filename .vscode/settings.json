@@ -1,5 +1,6 @@
 {
     "files.associations": {
+        "*.py": "python",
         "array": "cpp",
         "atomic": "cpp",
         "*.tcc": "cpp",
@@ -47,6 +48,7 @@
         "cstring": "cpp",
         "iterator": "cpp",
         "map": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "mall": "cpp"
     }
 }
