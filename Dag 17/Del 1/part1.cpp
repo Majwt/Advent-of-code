@@ -2,23 +2,26 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-std::string l;
 std::string Path = "..//input.txt";
 // std::string Path = "..//example.txt"; // andra fil vägen
 
 long long totalsum = 0;
 // Adderar och multiplicerar med de speciella reglerna
-long long getTotal(string str = "1 + 1");
+long long getTotal(string str);
+
 // hittar parentes par och kör getTotal på ekvationen inom 
-int closing(string expression, int index);
+int closing(string expression, int index); // inte min https://www.geeksforgeeks.org/find-index-closing-bracket-given-opening-bracket-expression/
+
 // räknar hur många -> c <- det finns i string
 int charInString(string s, char c);
+
 // raderar parenteser till charInString ger 0
-void removePar(string s);
+long long removePar(string s);
 
 int main()
 {
     std::ifstream input;
+    std::string l;
     input.open(Path);
     if (!input.is_open())
     {
@@ -28,7 +31,7 @@ int main()
     while (getline(input, l))
     {
         cout << l << endl;
-        removePar(l);
+        totalsum += removePar(l);
         cout << totalsum << endl;
         cout << endl;
     }
@@ -77,7 +80,7 @@ int charInString(string s, char c)
     }
     return cInS;
 }
-void removePar(string s)
+long long removePar(string s)
 {
 
     while (charInString(s, '(') != 0)
@@ -95,9 +98,9 @@ void removePar(string s)
             s.insert(foundO, re);
         }
     }
-    totalsum += (long long)getTotal(s);
+    return (long long)getTotal(s);
 }
-long long getTotal(string str = "1 + 1")
+long long getTotal(string str)
 {
     vector<string> spaced;
     long long sum = 0;
