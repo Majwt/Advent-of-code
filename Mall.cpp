@@ -8,16 +8,22 @@ int main()
 {
 
     std::string l;
-    std::ifstream input;
-    input.open(Path);
-    if (!input.is_open())
+    std::ifstream input{Path};
+    if (!input)
     {
         std::cout << "not found or could not open\n";
         return 1;
     }
-    while (getline(input, l))
+    while (input)
     {
-        std::cout << l << endl;
+        getline(input, l);
+        stringstream parser{};
+        parser << l;
+
+        if (input.fail())
+        {
+            break;
+        }
 
     }
 }
