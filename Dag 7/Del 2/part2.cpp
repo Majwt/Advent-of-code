@@ -93,14 +93,10 @@ int count_inner(string name)
     auto b = bag_array[name].inside;
     if (b.empty())
     {
-        cout << "\treturned\n}\n";
+        cout << "\treturned\n";
         return 0;
     }
-    for (auto &&i : b)
-    {
-        cout << "[" << i.first << " (" << i.second << ")] {" << endl;
-    }
-
+    
     int sum = 0;
     for (auto &&i : b)
     {
