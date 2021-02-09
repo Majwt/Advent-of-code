@@ -4,7 +4,7 @@ using namespace std;
 // std::string Path = "..//input.txt";
 std::string Path = "..//example.txt"; // andra fil vägen
 vector<char> temp;
-vector<int> circle;
+unordered_map<int,int> circle;
 vector<int> holding;
 int to_int(char i)
 {
@@ -46,7 +46,7 @@ int find_dest(int in)
         in--;
     }
 
-    b = circle.at(mod(in, circle.size()));
+    b = circle[mod(in, circle.size())];
 
     // cout << b << endl;
 
@@ -87,8 +87,7 @@ int erase(int current_cup)
     
     int a = 0;
     for (auto &&i : holding)
-    {   
-        int b = mod(current_cup,circle.size());
+    {
         circle.erase(find(circle.begin(), circle.end(), i));
     }
     current_cup -= offset;
@@ -118,11 +117,11 @@ int main()
     for (auto &&i : l)
     {
         cout << i << " ";
-        circle.push_back(to_int(i));
+        circle[to_int(i)] = 0;
     }
     for (size_t i = 10; i < mill; i++)
     {
-        circle.push_back(i);
+        circle[i] = 0;
     }
 
     cout << endl;
