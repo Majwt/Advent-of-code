@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <chrono>
 using namespace std;
 
 // std::string Path = "..//input.txt";
@@ -67,7 +68,8 @@ int find_dest(int in)
 }
 
 int erase(int current_cup)
-{
+{   
+     
     int offset = 0;
     if (mod(current_cup + 1, circle.size()) < current_cup)
     {
@@ -94,6 +96,7 @@ int erase(int current_cup)
     current_cup -= offset;
     // cout << "picked up: ";
     // print_c(holding);
+    
     return offset;
 }
 int mainLoop(int runs);
@@ -102,8 +105,10 @@ void get_results();
 
 int main()
 {
+    // int mill = 1000000;
+    // int runs = mill * 10;
     int mill = 1000000;
-    int runs = mill * 10;
+    int runs = mill * 11;
     std::string l;
     std::ifstream input{Path};
     if (!input)
@@ -137,23 +142,31 @@ int main()
 int mainLoop(int runs)
 {
     int current_cup = -1;
+    
     for (int i = 0; i < runs; i++)
     {
 
-        current_cup = mod(current_cup + 1, circle.size());
-        int a = i;
-        // printf("--- Move: %d --- \nCurrent Cup: %d\n", i + 1, current_cup);
 
+        current_cup = mod(current_cup + 1, circle.size());
+        
+        auto o1 = chrono::steady_clock::now();
+        current_cup -= erase(current_cup);
+    auto o2 = chrono::steady_clock::now();
         // cout << "current hand: ";
         // print_c(circle, current_cup);
-        current_cup -= erase(current_cup);
+
+        
         int destination;
         // print_c(circle,current_cup);
+        
         destination = find_dest(current_cup);
+        
         // printf("[%d] to i: %d\n", current_cup, destination);
 
         int nextcup = mod(current_cup, circle.size());
+        
         // cout << nextcup << endl;
+        
         circle.insert(circle.begin() + destination + 1, holding.begin(), holding.end());
         holding.clear();
 
@@ -162,6 +175,9 @@ int mainLoop(int runs)
             current_cup += 3;
         }
 
+    cout << "Time:  "
+        << chrono::duration_cast<chrono::milliseconds>(o2 - o1).count()
+        << " ms" << endl;
         // cout << endl;
     }
     return 0;
@@ -180,7 +196,7 @@ void get_results()
             cout << i << endl;
         }
     }
-    print_c(circle);
+    // print_c(circle);
 
     int first = circle[ones + 1];
     int second = circle[ones + 2];
