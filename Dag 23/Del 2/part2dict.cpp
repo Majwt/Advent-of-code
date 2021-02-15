@@ -3,9 +3,15 @@ using namespace std;
 
 // std::string Path = "..//input.txt";
 std::string Path = "..//example.txt"; // andra fil vägen
-vector<char> temp;
-unordered_map<int,int> circle;
-vector<int> holding;
+vector<int> temp{3,8,9,1,2,5,4,6,7};
+map<int,int> circle;
+
+struct node
+{
+    int data;
+    struct node* next;
+};
+
 int to_int(char i)
 {
     string s;
@@ -18,171 +24,96 @@ int mod(int a, int b)
     return (c < 0) ? c + b : c;
 }
 
-void print_c(vector<int> list, int current_cup = 100)
+namespace std::chrono
 {
-    if (current_cup < circle.size())
+    /**
+     * @brief Get the time object
+     * 
+     * @param start start time
+     * @param stop stop time
+     * @param suff 1 = minuets, 2 = seconds, 3 = milliseconds, 4 = microseconds, 5 = nanoseconds
+     */
+    void get_time(steady_clock::time_point start, steady_clock::time_point stop, int suff = 1)
     {
-        for (auto &&q : list)
+        int64_t t;
+        switch (suff)
         {
-            (q == list[current_cup]) ? printf("(%d) ", q) : printf("%d ", q);
+        case 1:
+
+            t = duration_cast<minutes>(stop - start).count();
+            cout << t << " min" << endl;
+            break;
+        case 2:
+
+            t = duration_cast<seconds>(stop - start).count();
+            cout << t << " s" << endl;
+            break;
+        case 3:
+
+            t = duration_cast<milliseconds>(stop - start).count();
+            cout << t << " ms" << endl;
+            break;
+        case 4:
+
+            t = duration_cast<microseconds>(stop - start).count();
+            cout << t << " µs" << endl;
+            break;
+        case 5:
+
+            t = duration_cast<nanoseconds>(stop - start).count();
+            cout << t << " ns" << endl;
+            break;
+
+        default:
+            break;
         }
     }
-    else
-    {
-        for (auto &&q : list)
-        {
-            printf("%d ", q);
-        }
-    }
-    cout << endl;
+
+};
+
+
+
+struct node* add_end(struct node* tail,int data) {
+
+    node* temp = new node;
+    temp->data = data;
+    temp->next = NULL;
+
+    temp->next = tail->next;
+    tail->next = temp;
+    tail = tail->next;
+    return tail;
 }
 
-int find_dest(int in)
-{
-    int b = 0;
-    if (in == circle.size())
+void print(node* tail) {
+    node* p = tail->next;
+    do
     {
-        cout << "bigger\n";
-        in--;
-    }
+        printf("%d ",p->data);
+        p = p->next;
+    } while (p!=tail->next);
 
-    b = circle[mod(in, circle.size())];
-
-    // cout << b << endl;
-
-    for (int c = 1; c < circle.size(); c++)
-    {
-
-        for (int i = in + 1; mod(i, circle.size()) != in; i++)
-        {
-            // cout << i << " " <<  mod(i,circle.size()) << " " << in << endl;
-            if (circle.at(mod(i, circle.size())) == mod(b - c, 10))
-            {
-                // printf("\nDestination: %d\n", circle.at(mod(i, circle.size())));
-                return mod(i, circle.size());
-            }
-        }
-    }
-    return 1;
 }
-
-int erase(int current_cup)
-{
-    int offset = 0;
-    if (mod(current_cup + 1, circle.size()) < current_cup)
-    {
-        offset++;
-    }
-    if (mod(current_cup + 2, circle.size()) < current_cup)
-    {
-        offset++;
-    }
-    if (mod(current_cup + 3, circle.size()) < current_cup)
-    {
-        offset++;
-    }
-    holding.push_back(circle.at(mod(current_cup + 1, circle.size())));
-    holding.push_back(circle.at(mod(current_cup + 2, circle.size())));
-    holding.push_back(circle.at(mod(current_cup + 3, circle.size())));
-    
-    int a = 0;
-    for (auto &&i : holding)
-    {
-        circle.erase(find(circle.begin(), circle.end(), i));
-    }
-    current_cup -= offset;
-    // cout << "picked up: ";
-    // print_c(holding);
-    return offset;
-}
-int mainLoop(int runs);
-
-void get_results();
 
 int main()
 {
-    int mill = 1000000;
-    int runs = mill * 10;
-    std::string l;
-    std::ifstream input{Path};
-    if (!input)
-    {
-        std::cout << "not found or could not open\n";
-        return 1;
-    }
+    cout << "h";
+    node* tail = new node;
+    cout << "o\n";
 
-    getline(input, l);
-    int c;
-    cout << "starting" << endl;
-    for (auto &&i : l)
-    {
-        cout << i << " ";
-        circle[to_int(i)] = 0;
-    }
-    for (size_t i = 10; i < mill; i++)
-    {
-        circle[i] = 0;
-    }
-
-    cout << endl;
-    /** 
-     * *MAIN loop
-    */
-    mainLoop(runs);
-
-    get_results();
+    tail->data = 3;
+    tail->next = tail;
+    tail = add_end(tail,8);
+    tail = add_end(tail,9);
+    tail = add_end(tail,1);
+    tail = add_end(tail,2);
+    tail = add_end(tail,5);
+    tail = add_end(tail,4);
+    tail = add_end(tail,6);
+    tail = add_end(tail,7);
+    print(tail);    
+    
+    
 }
 
-int mainLoop(int runs)
-{
-    int current_cup = -1;
-    for (int i = 0; i < runs; i++)
-    {
 
-        current_cup = mod(current_cup + 1, circle.size());
-        int a = i;
-        // printf("--- Move: %d --- \nCurrent Cup: %d\n", i + 1, current_cup);
-
-        // cout << "current hand: ";
-        // print_c(circle, current_cup);
-        current_cup -= erase(current_cup);
-        int destination;
-        // print_c(circle,current_cup);
-        destination = find_dest(current_cup);
-        // printf("[%d] to i: %d\n", current_cup, destination);
-
-        int nextcup = mod(current_cup, circle.size());
-        // cout << nextcup << endl;
-        circle.insert(circle.begin() + destination + 1, holding.begin(), holding.end());
-        holding.clear();
-
-        if (nextcup > destination)
-        {
-            current_cup += 3;
-        }
-
-        // cout << endl;
-    }
-    return 0;
-}
-
-void get_results()
-{
-    cout << "---Final---" << endl;
-    // print_c(circle);
-    int ones;
-    for (size_t i = 0; i < circle.size(); i++)
-    {
-        if (circle.at(i) == 1)
-        {
-            ones = i;
-            cout << i << endl;
-        }
-    }
-    print_c(circle);
-
-    int first = circle[ones + 1];
-    int second = circle[ones + 2];
-    long long resu = (long long)first * (long long)second;
-    printf("---Output---\n%d * %d = %lld", first, second, resu);
-}

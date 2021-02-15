@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-std::string Path = "..//input.txt";
-// std::string Path = "..//example.txt"; // andra fil vägen
+// std::string Path = "..//input.txt";
+std::string Path = "..//example.txt"; // andra fil vägen
 vector<char> temp;
 vector<int> circle;
 vector<int> holding;
@@ -150,8 +150,8 @@ int main()
         return 1;
     }
 
-    getline(input, l);
-    int runs = stoi(l, nullptr);
+    // getline(input, l);
+    // int runs = stoi(l, nullptr);
     getline(input, l);
     int c;
     cout << "starting" << endl;
@@ -164,7 +164,7 @@ int main()
     /** 
      * *MAIN loop
     */
-    mainLoop(runs);
+    mainLoop(10);
     
     get_results();
 }
