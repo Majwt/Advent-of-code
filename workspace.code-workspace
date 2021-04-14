@@ -3,6 +3,9 @@
 		{
 			"name": "Advent-of-code",
 			"path": "."
+		},
+		{
+			"path": "..\\hfiler"
 		}
 	],
 	"settings": {

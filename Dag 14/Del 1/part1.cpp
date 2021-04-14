@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
 // #include "header/myfunctions.h"
 // #include <header/addons.h>
-#include "C:/Users/theodor.wase/Documents/Visual Studio 2019/projekt/Advent-of-code-1/header/myfunctions.h"
+// #include "C:/Users/theodor.wase/Documents/Visual Studio 2019/projekt/Advent-of-code-1/header/myfunctions.h"
+#include "d:/Kod/hfiler/myfunctions.hpp"
+
 using namespace std;
 
 std::string Path = "..//input.txt";
