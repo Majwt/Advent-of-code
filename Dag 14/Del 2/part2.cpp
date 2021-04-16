@@ -2,21 +2,21 @@
 // #include "header/myfunctions.h"
 // #include <header/addons.h>
 // #include "C:/Users/theodor.wase/Documents/Visual Studio 2019/projekt/Advent-of-code-1/header/myfunctions.h"
-
-#include "d:/Kod/hfiler/myfunctions.hpp"
+#include "C:\Users\theodor.wase\Documents\Visual Studio 2019\projekt\hfiler\myfunctions.hpp"
+// #include "d:/Kod/hfiler/myfunctions.hpp"
 
 using namespace std;
 
-// std::string Path = "..//input.txt";
-std::string Path = "..//example.txt"; // andra fil vägen
+std::string Path = "..//input.txt";
+// std::string Path = "..//example.txt"; // andra fil vägen
 
-map<int, size_t> mem;
+map<long long, size_t> mem;
 
-string reverse(string a) {
-    reverse(a.begin(),a.end());
+string reverse(string a)
+{
+    reverse(a.begin(), a.end());
     return a;
 }
-
 
 vector<long long> masking(long long x, string mask = "000000000000000000000000000000000000")
 {
@@ -42,16 +42,15 @@ vector<long long> masking(long long x, string mask = "00000000000000000000000000
         // {
         //     cout << '\t' << n << endl;
         // }
-        // cout << "mask: " << mask[i] << endl << "after: \n";
+        // cout << "mask: " << rmask << endl
+        //      << "current: " << mask[i] << endl
+        //      << "after: \n";
         int siz = temp.size();
         for (size_t j = 0; j != siz; j++)
         {
-            
+
             if (mask[i] == 'X')
             {
-                if (temp.size() > 100) {
-                    return vector<long long>(10);
-                }
                 temp.push_back(temp[j]);
                 temp[j] += '0';
                 temp[j + siz] += '1';
@@ -106,14 +105,16 @@ int main()
         parser >> check;
         int mempos;
         // cout << check << endl;
-        if (check == "k") {
+        if (check == "k")
+        {
             parser.ignore(2);
-
             parser >> mask;
             // cout << "mask: " << mask << "\t size:" << mask.size() << endl;
             continue;
-        } else {
-            mempos = stoi(check.substr(1,closing(check,0,'[',']')-1),nullptr,10);
+        }
+        else
+        {
+            mempos = stoi(check.substr(1, closing(check, 0, '[', ']') - 1), nullptr, 10);
             // cout << "mempos:\t" << mempos << endl;
             parser.ignore(3);
             long long v;
@@ -121,12 +122,13 @@ int main()
             // cout << "value:\t";
             // print_binary(v,36);
             // cout << " " << v << endl << "mask:\t" << mask << endl << "result:\t";
-            auto r = masking(mempos,mask);
-            for (auto &&i : r)
+            vector<long long> outvec = masking(mempos, mask);
+            for (auto &&outmem : outvec)
             {
-            mem[i] = v;
+                mem[outmem] = v;
+                cout << "mempos: " << outmem << "\t value: " << v << endl;
             }
-            
+
             // print_binary(r,36);
             // printf("\nmem[%d] = %lld\n\n",mempos,mem[mempos]);
         }
@@ -134,7 +136,8 @@ int main()
         {
             break;
         }
-        if (parser.fail()) {
+        if (parser.fail())
+        {
             break;
         }
     }
@@ -152,7 +155,8 @@ int main()
     size_t sum = 0;
     for (auto &&i : mem)
     {
-        sum+=i.second;
+        cout << i.first << "\t" << i.second << endl;
+        sum += i.second;
     }
     cout << "\nsum: " << sum;
     // string mask = "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXX0X0X0X";

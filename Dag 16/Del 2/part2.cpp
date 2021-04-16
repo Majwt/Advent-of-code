@@ -8,10 +8,10 @@
 using namespace std;
 
 std::string l;
-std::string PathC = "..//condition.txt";
-std::string Path = "..//input.txt";
-         std::string PathF = "..//Fullinput.txt";
-         //std::string PathF = "..//example.txt"; // andra fil vägen
+// std::string PathC = "..//condition.txt";
+// std::string Path = "..//input.txt";
+        //  std::string PathF = "..//Fullinput.txt";
+         std::string PathF = "..//example.txt"; // andra fil vägen
 /*
     your ticket:
     157,59,163,149,83,131,107,89,109,113,151,53,127,97,79,103,101,173,167,61
@@ -19,6 +19,7 @@ std::string Path = "..//input.txt";
 */
 struct con
 {
+
     string name;
     int high1;
     int low1;
@@ -172,17 +173,19 @@ int main()
        checkTicket(i);
        
     }
-    for (size_t i = 0; i < hit.size(); i++)
+
+    cout << "cond size: " << conds.size() << endl << "hit.size(): " << hit.size() << endl;
+    for (size_t i = 0; i < hit.size()-1; i++)
     {
-        if (i % 20 == 0) {
+        if (i % (hit.size()-1) == 0) {
             cout << endl;
         }
         for (auto &&v : hit[i])
         {
             cout << v << " ";
         }
-        cout << i % 20;
-        cout << "\tname: " << conds[i%20].name << endl;
+        cout << i % (conds.size());
+        cout << "\t" << conds.at(i%(conds.size())).name << endl;
     }
         
 }

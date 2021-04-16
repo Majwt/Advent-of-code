@@ -10,6 +10,7 @@
 	],
 	"settings": {
 		"files.associations": {
+			"*.py": "python",
 			"algorithm": "cpp",
 			"atomic": "cpp",
 			"cctype": "cpp",
@@ -99,7 +100,11 @@
 			"shared_mutex": "cpp",
 			"thread": "cpp",
 			"typeindex": "cpp",
-			"valarray": "cpp"
+			"valarray": "cpp",
+			"queue": "cpp",
+			"stack": "cpp",
+			"xhash": "cpp",
+			"xtree": "cpp"
 		}
 	}
 }
