@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-std::string Path = "..//input.txt";
-// std::string Path = "..//example.txt"; // andra fil vägen
+// std::string Path = "..//input.txt";
+std::string Path = "..//example.txt"; // andra fil vägen
 // std::string Path = "..//example copy.txt"; // andra fil vägen
 
 vector<vector<vector<char>>> plane;
@@ -122,15 +122,7 @@ void print_layer(vector<vector<char>> p, int y)
         cout << endl;
     }
     cout << endl;
-    // for (auto &&y : p)
-    // {
-    //     for (auto &&x : y)
-    //     {
-    //         cout << x << " ";
-    //     }
-    //     cout << endl;
-    // }
-    // cout << endl;
+    
 }
 void printPlane(vector<vector<vector<char>>> plane)
 {
@@ -185,8 +177,8 @@ int main()
         std::cout << "not found or could not open\n";
         return 1;
     }
-    int overflow = initPlane(8, 7);
-    // int overflow = initPlane(3, 7);
+    // int overflow = initPlane(8, 7);
+    int overflow = initPlane(3, 7);
 
     int h = 0;
     while (getline(input, l))

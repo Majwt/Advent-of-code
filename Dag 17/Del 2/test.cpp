@@ -1,15 +1,22 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-std::string Path = "..//input.txt";
-// std::string Path = "..//example.txt"; // andra fil vägen
+// std::string Path = "..//input.txt";
+std::string Path = "..//example.txt"; // andra fil vägen
 // std::string Path = "..//example copy.txt"; // andra fil vägen
 
 vector<vector<vector<char>>> plane;
 vector<vector<vector<char>>> Pcopy;
 vector<char> temp;
 vector<vector<char>> temp2d;
-
+int test(int n) {
+    for (int i = -1; i < 2; i++)
+    {
+        bool ni_0 = (n+i < 0);
+        bool ni_0 = ( < 0);
+    }
+    
+}
 int neighbors3d(int z, int y, int x)
 {
     int counter = 0;
@@ -122,15 +129,7 @@ void print_layer(vector<vector<char>> p, int y)
         cout << endl;
     }
     cout << endl;
-    // for (auto &&y : p)
-    // {
-    //     for (auto &&x : y)
-    //     {
-    //         cout << x << " ";
-    //     }
-    //     cout << endl;
-    // }
-    // cout << endl;
+    
 }
 void printPlane(vector<vector<vector<char>>> plane)
 {
@@ -185,8 +184,8 @@ int main()
         std::cout << "not found or could not open\n";
         return 1;
     }
-    int overflow = initPlane(8, 7);
-    // int overflow = initPlane(3, 7);
+    // int overflow = initPlane(8, 7);
+    int overflow = initPlane(3, 7);
 
     int h = 0;
     while (getline(input, l))
