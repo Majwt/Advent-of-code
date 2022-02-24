@@ -1,10 +1,5 @@
-#include <iostream>
-#include <vector>
-#include <string>
-#include <fstream>
-#include <filesystem>
-#include <algorithm>
-using namespace std;
+#include <bits/stdc++.h>
+using std::cout; using std::endl;
 
 std::string l;
 std::string Path = "..//input.txt";
@@ -12,17 +7,17 @@ std::string Path = "..//input.txt";
 int main()
 {
 
-    std::ifstream input;
-    input.open(Path);
-    if (!input.is_open())
-    {
-        std::cout << "not found or could not open\n";
-        return 1;
-    }
+	std::ifstream input;
+	input.open(Path);
+	if (!input.is_open())
+	{
+		cout << "not found or could not open\n";
+		return 1;
+	}
 
-    while (getline(input, l))
-    {
-        std::cout << l << '\n';
+	while (getline(input, l))
+	{
+		cout << l << '\n';
 
-    }
+	}
 }
